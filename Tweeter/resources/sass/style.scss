@@ -1,28 +1,48 @@
+@import "variables";
+
+@mixin font-setting( $font-type, $f-size, $f-color,$bg-color, $padd, $t-align) {
+    font-family: $font-type;
+    font-size:$f-size;
+    color :$f-color;
+    background-color:$bg-color;
+    padding : $padd;
+    text-align: $t-align;
+    //font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+@mixin width-height($w, $h) {
+    width : $w;
+    height : $h;
+}
+@mixin grid-layout($d, $g-c, $g-r, $j-c, $a-c){
+    display: $d;
+    grid-template-columns: $g-c;
+    grid-template-rows: $g-r;
+    justify-content: $j-c;
+    align-content: $a-c;
+}
+@mixin border-radius($t-l, $t-r, $b-l, $b-r) {
+    border-top-left-radius: $t-l;
+    border-top-right-radius: $t-r;
+    border-bottom-left-radius: $b-l;
+    border-bottom-right-radius: $b-r;
+}
 * {
     box-sizing: border-box;
   }
   /* Style the header */
-#welcome {
-    background-color: #666;
-    padding: 30px;
-    text-align: center;
-    font-size: 35px;
-    color: white;
-    height: 300px;
-  }
-#welcome1 {
-    color: rgb(202, 86, 86);
+header {
+    @include font-setting($font, none, white, #666, 2px, center);
+    @include width-height(none, 15vh);
+    @include border-radius(none, none, 50px, 50px);
   }
 nav {
     float: left;
-    width: 30%;
-    height: 300px;
-    background: rgb(253, 183, 183);
-    padding: 20px;
+    @include width-height(10vw, 75vh);
+    @include font-setting($font, none, none, rgb(253, 183, 183), none, none);
   }
 
-  nav ul {
-    list-style-type: none;
+nav ul {
+    list-style-type : none;
     padding: 0;
   }
  section {
@@ -31,28 +51,50 @@ nav {
     clear: both;
  }
 
-  article {
+article {
     float: left;
-    padding: 20px;
-    width: 70%;
-    background-color: #f1f1f1;
-    height: 300px;
-  }
-
-  /* Style the footer */
-  footer {
-    background-color: #777;
-    padding: 10px;
-    text-align: center;
-    color: white;
-  }
-.username {
-    color : blue;
+    @include width-height(98vw, auto);
+    @include font-setting($font, none, none, #f1f1f1, 2vw, none);
+    @include border-radius(50px, 50px, 50px, 50px);
 }
 
-  @media (max-width: 600px) {
-    nav, article {
-      width: 100%;
-      height: auto;
-    }
+  /* Style the footer */
+footer {
+    @include font-setting($font, none, white, #777, 10px, center);
+    @include width-height(none, 10vh);
+    @include border-radius(50px, 50px, none, none);
+}
+#tab {
+    padding-right: 15px;
+}
+#user-login {
+    padding-left : 80px;
+}
+#exist-user {
+    border-bottom: 2px solid gray;
+    font-weight: bold;
+    @include width-height(20vw, none);
+    @include font-setting($font, none, none, none, 15px 0, none);
+}
+#grid {
+    @include grid-layout(grid, 40vw 50vw, 1fr, center, center);
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include width-height(25px, 25px);
+    background-color: #eee;
+    border-radius: 50%;
   }
+#button {
+    border-radius: 10px;
+    @include font-setting($font, 18px, white, #666, 3px, center);
+    @include width-height(7vw, 3vw);
+}
+@media (max-width: 600px) {
+    nav, article {
+    @include width-height(100vw, auto);
+    }
+}

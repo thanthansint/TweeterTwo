@@ -4,25 +4,31 @@
 
 /* Style the header */
 
-#welcome {
-  background-color: #666;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
+header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: none;
   color: white;
-  height: 300px;
-}
-
-#welcome1 {
-  color: #ca5656;
+  background-color: #666;
+  padding: 2px;
+  text-align: center;
+  width: none;
+  height: 15vh;
+  border-top-left-radius: none;
+  border-top-right-radius: none;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 nav {
   float: left;
-  width: 30%;
-  height: 300px;
-  background: #fdb7b7;
-  padding: 20px;
+  width: 10vw;
+  height: 75vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: none;
+  color: none;
+  background-color: #fdb7b7;
+  padding: none;
+  text-align: none;
 }
 
 nav ul {
@@ -38,29 +44,93 @@ section {
 
 article {
   float: left;
-  padding: 20px;
-  width: 70%;
+  width: 98vw;
+  height: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: none;
+  color: none;
   background-color: #f1f1f1;
-  height: 300px;
+  padding: 2vw;
+  text-align: none;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 /* Style the footer */
 
 footer {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: none;
+  color: white;
   background-color: #777;
   padding: 10px;
   text-align: center;
-  color: white;
+  width: none;
+  height: 10vh;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: none;
+  border-bottom-right-radius: none;
 }
 
-.username {
-  color: blue;
+#tab {
+  padding-right: 15px;
+}
+
+#user-login {
+  padding-left: 80px;
+}
+
+#exist-user {
+  border-bottom: 2px solid gray;
+  font-weight: bold;
+  width: 20vw;
+  height: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: none;
+  color: none;
+  background-color: none;
+  padding: 15px 0;
+  text-align: none;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: 40vw 50vw;
+  grid-template-rows: 1fr;
+  -webkit-box-pack: center;
+          justify-content: center;
+  align-content: center;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+#button {
+  border-radius: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  color: white;
+  background-color: #666;
+  padding: 3px;
+  text-align: center;
+  width: 7vw;
+  height: 3vw;
 }
 
 @media (max-width: 600px) {
   nav,
   article {
-    width: 100%;
+    width: 100vw;
     height: auto;
   }
 }
