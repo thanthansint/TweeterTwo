@@ -18,10 +18,9 @@
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/homepage', 'LoginController@homepage');
-Route::get('/checkLogin', 'LoginController@checkLogin');
-//Route::get('/userSignup', 'LoginController@signupForm');
-
-
+Route::get('/homepage', 'UserController@homepage');
+Route::get('/checkLogin', 'UserController@checkLogin');
+Route::post('/userSignup', 'UserController@userSignup');
+Route::get('/userHome', 'TweetController@show');
 
 ?>

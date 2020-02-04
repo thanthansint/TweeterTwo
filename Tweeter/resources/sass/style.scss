@@ -35,6 +35,7 @@ header {
     @include width-height(none, 15vh);
     @include border-radius(none, none, 50px, 50px);
   }
+
 nav {
     float: left;
     @include width-height(10vw, 75vh);
@@ -80,18 +81,34 @@ footer {
     @include grid-layout(grid, 40vw 50vw, 1fr, center, center);
 }
 
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    @include width-height(25px, 25px);
-    background-color: #eee;
-    border-radius: 50%;
-  }
+#birthday{
+    display: inline-block;
+    border: groove;
+    vertical-align: middle;
+    @include width-height(39.1vw,6.6vh);
+}
+#text {
+    @include width-height(12.5vw, 5.2vh);
+}
+#search {
+    @include width-height(50vw, 5.2vh);
+    display: inline;
+    position: relative;
+    top : 6vh;
+    left : 25vw;
+}
 #button {
     border-radius: 10px;
     @include font-setting($font, 18px, white, #666, 3px, center);
     @include width-height(7vw, 3vw);
+}
+#userHeader {
+    @include width-height(100vw, 15vh);
+    @include font-setting($font, 18px, white, #666, 3px, center);
+}
+#tab1 {
+    list-style-type: none;
+    @include font-setting($font, 20px, #666, none, 50px, center);
 }
 @media (max-width: 600px) {
     nav, article {

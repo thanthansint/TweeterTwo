@@ -105,14 +105,26 @@ footer {
   align-content: center;
 }
 
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 25px;
-  height: 25px;
-  background-color: #eee;
-  border-radius: 50%;
+#birthday {
+  display: inline-block;
+  border: groove;
+  vertical-align: middle;
+  width: 39.1vw;
+  height: 6.6vh;
+}
+
+#text {
+  width: 12.5vw;
+  height: 5.2vh;
+}
+
+#search {
+  width: 50vw;
+  height: 5.2vh;
+  display: inline;
+  position: relative;
+  top: 6vh;
+  left: 25vw;
 }
 
 #button {
@@ -125,6 +137,27 @@ footer {
   text-align: center;
   width: 7vw;
   height: 3vw;
+}
+
+#userHeader {
+  width: 100vw;
+  height: 15vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  color: white;
+  background-color: #666;
+  padding: 3px;
+  text-align: center;
+}
+
+#tab1 {
+  list-style-type: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color: #666;
+  background-color: none;
+  padding: 50px;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
