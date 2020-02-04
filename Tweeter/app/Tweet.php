@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tweets extends Model
+class Tweet extends Model
 {
+    protected $table='Tweet';
     public function user(){
         return $this->belongsTo('App\User');
     }

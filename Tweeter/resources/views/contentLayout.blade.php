@@ -1,6 +1,8 @@
+
 <section>
-<article>
-{{-- <h1>Content</h1> --}}
-@include('login')
-</article>
+    <article>
+
+        @include('loginForm')
+
+    </article>
 </section>

@@ -19,5 +19,9 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/homepage', 'LoginController@homepage');
-Route::get('/userLogin', 'LoginController@login');
+Route::get('/checkLogin', 'LoginController@checkLogin');
+//Route::get('/userSignup', 'LoginController@signupForm');
+
+
+
 ?>

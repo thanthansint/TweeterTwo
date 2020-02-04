@@ -13,7 +13,7 @@ class CreateTweetTable extends Migration
      */
     public function up()
     {
-        Schema::create('tweet', function (Blueprint $table) {
+        Schema::create('tweets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
             $table->string('content');
@@ -28,6 +28,6 @@ class CreateTweetTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tweet');
+        Schema::dropIfExists('tweets');
     }
 }

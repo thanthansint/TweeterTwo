@@ -1,13 +1,8 @@
 @extends('masterLayout')
 
-@section('headerlayout')
+@section('content')
 <header>
     <h1>Welcome To Tweeter</h1>
 </header>
-{{-- @include('sidebarLayout') --}}
-@include('contentLayout')
-
-@include('footerLayout')
-
 @endsection
 
