@@ -21,6 +21,14 @@ Auth::routes();
 Route::get('/homepage', 'UserController@homepage');
 Route::get('/checkLogin', 'UserController@checkLogin');
 Route::post('/userSignup', 'UserController@userSignup');
-Route::get('/userHome', 'TweetController@show');
+Route::get('/tweetFeed', 'TweetController@show');
+
+Route::get('/createTweet', 'TweetController@createTweet');
+Route::post('/deleteTweet', 'TweeetController@deleteTweet');
+Route::post('/tweetFeed', 'TweetController@editTweet');
+Route::post('/editTweetForm', 'TweetController@showEditForm');
+Route::get('/tweetFeed/{id}', 'TweetController@showTweet');
+Route::get('/showProfiles', 'TweetController@showAllUsers');
+Route::get('/showProfiles', 'TweetController@followUsers');
 
 ?>

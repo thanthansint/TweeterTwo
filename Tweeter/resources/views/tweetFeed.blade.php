@@ -1,10 +1,12 @@
 @extends('masterUser')
-@section('content')
 
-    @guest
+@section('content')
+    @include('userHome');
+    {{-- @guest
         <p>Go Sign Up!</p>
-    @else
-        <p id="welcome">Welcome {{Auth::user()->name}}</p>
+    @else --}}
+
+    <p id="welcome">Welcome </p>
 
         @foreach ($tweets as $tweet)
             <p><strong>{{$tweet->author}}</strong></p>
@@ -45,7 +47,7 @@
             <input type="submit" name="create" value="Create">
         </form>
 
-    @endguest
+     {{-- @endguest --}}
 
 @endsection
 

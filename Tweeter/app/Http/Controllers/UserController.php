@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LoginController extends Controller
+
+class UserController extends Controller
 {
     public function homepage()
     {
@@ -17,7 +18,7 @@ class LoginController extends Controller
         $result = \App\User::where('username', $username)
                         ->where ('password', $password)->get();
         if (sizeOf($result)==1) {
-            return view('userHome');
+            return view('tweetFeed');
         }else {
             return view('loginFail');
         }
@@ -25,11 +26,12 @@ class LoginController extends Controller
     public function userSignup(Request $request) {
         $validatedData = $request->validate([
             'username' => 'required|max:255',
-            'email'=>'required|email|unique:users,email',
-            'password'=>'required|max:255',
+            // 'email'=>'required|email|unique:users,email',
+            'email'=>'email:rfc,dns',
+            'password'=>'required|max:255'
         ]);
 
-        $name = $request->name;
+        $username = $request->username;
         $email = $request->email;
         $password = $request->password;
         $birthday = $request->month.'/'.$request->day.'/'.$request->year;
@@ -43,15 +45,13 @@ class LoginController extends Controller
         $address = $request->city.' '.$request->country;
 
         $user = new \App\User;
-        $user->username = $name;
+        $user->username = $username;
         $user->email = $email;
         $user->password = $password;
         $user->birthday = $birthday;
         $user->gender = $gender;
         $user->address = $address;
         $user->save();
-        return view('userHome');
+        return view('headerLayout');
     }
-
-
 }

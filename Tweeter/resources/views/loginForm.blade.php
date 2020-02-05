@@ -17,8 +17,8 @@
     @csrf
     <p id="exist-user">For New Users</p>
     <span id="tab">Name</span>
-    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="text" autofocus><br><br>
-    @error('name')
+    <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" id="text" autofocus><br><br>
+    @error('username')
         <span class="invalid-feedback" role="alert">
             <strong>{{$message}}</strong>
         </span>

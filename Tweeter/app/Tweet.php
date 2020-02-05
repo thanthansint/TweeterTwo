@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Tweet extends Model
 {
     protected $table='Tweet';
+    protected $primaryKey = 'id';
+    //public $timestamp = false;
     public function user(){
         return $this->belongsTo('App\User');
     }
