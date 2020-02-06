@@ -54,4 +54,44 @@ class UserController extends Controller
         $user->save();
         return view('headerLayout');
     }
+    public function userProfile() {
+        return view('userProfile');
+    }
+    public function showUserProfile(Request $request){
+        $userProfile = \App\User::find($request->id);
+        return view('userProfile', ['userProfile'=>$userProfile]);
+    }
+    public function editUserProfileForm() {
+        return view('editUserProfileForm');
+    }
+    public function editUserProfile(Request $request) {
+        $validatedData = $request->validate([
+            'username' => 'required|max:255',
+            'email'=>'email:rfc,dns',
+            'password'=>'required|max:255'
+        ]);
+
+        $newuser = \App\User::find($request->userId);
+        $newuser->username = $request->username;
+        $newuser->email = $request->email;
+        $newuser->password = $request->password;
+        $newuser->birthday = $request->month.'/'.$request->day.'/'.$request->year;
+        if ($request->female) {
+            $newuser->gender = "female";
+        } else if ($request->male){
+            $newuser->gender = "male";
+        } else {
+            $newuser->gender = "other";
+        }
+        $newuser->username = $request->city.' '.$request->country;
+        $newuser->save();
+
+        return view('tweetFeed');
+    }
+
+    public function deleteUserProfile(Request $request){
+        \App\User::destroy($request->userId);
+         return view('tweetFeed');
+    }
+
 }

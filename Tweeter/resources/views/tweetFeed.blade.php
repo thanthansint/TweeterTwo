@@ -1,53 +1,55 @@
 @extends('masterUser')
 
 @section('content')
-    @include('userHome');
-    {{-- @guest
+    @guest
         <p>Go Sign Up!</p>
-    @else --}}
-
-    <p id="welcome">Welcome </p>
-
-        @foreach ($tweets as $tweet)
-            <p><strong>{{$tweet->author}}</strong></p>
-            <p>{{$tweet->content}}</p>
-            <p>{{$tweet->created_at}}</p>
+    @else
+        <p id="welcome">Welcome {{ Auth::user()->name }}</p>
+        @foreach ($data as $tweet)
+            <div id="tweet-frame">
+                <div>
+                    <p><strong>{{$tweet->author}}</strong></p>
+                    <p>{{$tweet->content}}</p>
+                    <p>{{$tweet->created_at}}</p>
+                    <form action="/saveLike" method="post">
+                        @csrf
+                        <input type="hidden" name="tweetId" value="{{$tweet->id}}">
+                        <input type="hidden" name="userName" value="{{Auth::user()->name}}">
+                        <button type="submit" value="{{$tweet->id}}"><i class="fal fa-thumbs-up"></i>Like</button>
+                    </form>
+                    <form action="/saveComment" method="post">
+                        @csrf
+                        <input type="hidden" name="tweetId" value="{{$tweet->id}}">
+                        <input type="hidden" name="userName" value="{{Auth::user()->name}}">
+                        <span>Comment</span>
+                        <input type="text" name="comment" value="">
+                        <input type="submit" name="submit" value="-->">
+                    </form>
+                    <form action="/showComments" method="post">
+                        @csrf
+                        <input type="hidden" name="tweetId" value="{{$tweet->id}}">
+                        <input type="hidden" name="userName" value="{{Auth::user()->name}}">
+                        <button type="submit" value="{{$tweet->id}}"><i class="far fa-comment"></i></button>
+                    </form>
+                </div>
             @if (Auth::user()->name == $tweet->author)
-                <form action="/editTweetForm" method="post">
-                    @csrf
-                    <input type="hidden" name="id" value="{{$tweet->id}}">
-                    <button type="submit" value="{{$tweet->id}}">Edit</button>
-                </form>
-                <form action="/deleteTweet" method="post">
-                    @csrf
-                    <input type="hidden" name="id" value="{{$tweet->id}}">
-                    <button type="submit" value="{{$tweet->id}}">Delete</button>
-                </form>
+                <div>
+                    <form action="/editTweetForm" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$tweet->id}}">
+                        <button type="submit" value="{{$tweet->id}}">Edit</button>
+                    </form>
+                </div>
+                <div>
+                    <form action="/deleteTweet" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$tweet->id}}">
+                        <button type="submit" value="{{$tweet->id}}">Delete</button>
+                    </form>
+                </div>
             @endif
+            </div>
         @endforeach
-
-
-        <form action="/createTweet" method="get">
-            @csrf
-            <p>Create New Tweet</p>
-            <p>Content</p>
-            <input type="text" class="form-control @error('content') is-invalid @enderror" name="content" value="" autofocus>
-                @error('content')
-                    <span class="invalid-feedback" role="alert">
-                            <strong>{{$message}}</strong>
-                    </span>
-                @enderror
-            <p>Author</p>
-            <input type="text" class="form-control @error('author') is-invalid @enderror" name="author" value="" autofocus>
-                @error('author')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{$message}}</strong>
-                    </span>
-                @enderror
-            <input type="submit" name="create" value="Create">
-        </form>
-
-     {{-- @endguest --}}
-
+    @endguest
 @endsection
 

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tweet extends Model
 {
-    protected $table='Tweet';
+    protected $table='tweet';
     protected $primaryKey = 'id';
     //public $timestamp = false;
     public function user(){

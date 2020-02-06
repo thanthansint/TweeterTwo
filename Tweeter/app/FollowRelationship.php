@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FollowRelationship extends Model
 {
-    protected $table ='FollowRelationship';
+    protected $table ='followRelationship';
     public function user(){
         return $this->belongsTo('App\User');
     }

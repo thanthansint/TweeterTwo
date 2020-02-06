@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Like extends Model
 {
-    protected $table='Like';
+    protected $table='like';
     public function user(){
         return $this->belongsTo('App\User');
     }

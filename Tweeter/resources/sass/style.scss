@@ -110,6 +110,9 @@ footer {
     list-style-type: none;
     @include font-setting($font, 20px, #666, none, 50px, center);
 }
+#tweet-frame{
+    border : 1px solid gray;
+}
 @media (max-width: 600px) {
     nav, article {
     @include width-height(100vw, auto);

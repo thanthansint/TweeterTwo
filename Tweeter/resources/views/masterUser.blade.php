@@ -8,6 +8,7 @@
     <title>Layout</title>
 </head>
 <body>
+    @include('userHome');
     @yield('content');
 </body>
 </html>
