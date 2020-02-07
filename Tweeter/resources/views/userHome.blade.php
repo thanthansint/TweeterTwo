@@ -10,9 +10,9 @@
     <title>User Home</title>
 </head>
 <body>
-    <header id="userHeader">
-        <h1>Welcome To Tweeter</h1>
-    </header>
+
+    <h1>Welcome To Tweeter</h1>
+
     <a href="createTweetForm" id="tab1">Create Tweet</a>
     <a href="userProfile" id="tab1">User's Profile</a><br><br>
     <div>

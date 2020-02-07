@@ -11,16 +11,16 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/homepage', 'UserController@homepage');
-Route::get('/checkLogin', 'UserController@checkLogin');
-Route::post('/userSignup', 'UserController@userSignup');
+Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/homepage', 'UserController@homepage');
+// Route::get('/checkLogin', 'UserController@checkLogin');
+// Route::post('/userSignup', 'UserController@userSignup');
 Route::post('/userProfile', 'UserController@userProfile');
 Route::post('/userProfile', 'UserController@showUserProfile');
 Route::post('/editUserProfileForm', 'UserController@editUserProfileForm');
@@ -28,18 +28,19 @@ Route::post('/tweetFeed', 'UserController@editUserProfile');
 Route::post('/tweetFeed', 'UserController@deleteUserProfile');
 
 Route::get('/tweetFeed', 'TweetController@show');
-Route::get('/createTweetForm', 'TweetController@showCreateForm');
+Route::get('/createTweetForm', 'TweetController@createTweetForm');
 Route::get('/createTweet', 'TweetController@createTweet');
 
-Route::post('/deleteTweet', 'TweeetController@deleteTweet');
-Route::post('/tweetFeed', 'TweetController@editTweet');
+Route::post('/deleteTweet', 'TweetController@deleteTweet');
 Route::post('/editTweetForm', 'TweetController@showEditForm');
+Route::post('/editTweet', 'TweetController@editTweet');
 
-Route::post('/tweetFeed', 'TweetController@saveLike');
-Route::post('/tweetFeed', 'TweetController@saveCommment');
-Route::post('/tweetFeed', 'TweetController@showCommments');
-Route::post('/commentForm', 'TweetController@commmentForm');
-Route::post('/tweetFeed', 'TweetController@editCommment');
+Route::post('/saveLike', 'TweetController@saveLike');
+Route::post('/saveComment', 'TweetController@saveComment');
+Route::post('/showComments', 'TweetController@showComments');
+Route::post('/commentForm', 'TweetController@commentForm');
+Route::post('/editComment', 'TweetController@editComment');
+Route::post('/deleteComment', 'TweetController@deleteComment');
 
 Route::get('/tweetFeed/{id}', 'TweetController@showTweet');
 Route::get('/showProfiles', 'TweetController@showAllUsers');

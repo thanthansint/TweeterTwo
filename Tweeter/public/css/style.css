@@ -160,6 +160,10 @@ footer {
   text-align: center;
 }
 
+#tweet-style {
+  border: 1px solid gray;
+}
+
 @media (max-width: 600px) {
   nav,
   article {

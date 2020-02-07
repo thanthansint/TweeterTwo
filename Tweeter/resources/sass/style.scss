@@ -110,7 +110,7 @@ footer {
     list-style-type: none;
     @include font-setting($font, 20px, #666, none, 50px, center);
 }
-#tweet-frame{
+#tweet-style{
     border : 1px solid gray;
 }
 @media (max-width: 600px) {
