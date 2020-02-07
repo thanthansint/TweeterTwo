@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- <link href="{{ asset('css/style.css') }}" rel="stylesheet"> --}}
+    <link rel ="stylesheet" href =" https://www.jsdelivr.com/package/npm/bulma">
 </head>
 <body>
     <div id="app">

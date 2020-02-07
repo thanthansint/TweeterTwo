@@ -30,7 +30,6 @@ Route::post('/tweetFeed', 'UserController@deleteUserProfile');
 Route::get('/tweetFeed', 'TweetController@show');
 Route::get('/createTweetForm', 'TweetController@createTweetForm');
 Route::get('/createTweet', 'TweetController@createTweet');
-
 Route::post('/deleteTweet', 'TweetController@deleteTweet');
 Route::post('/editTweetForm', 'TweetController@showEditForm');
 Route::post('/editTweet', 'TweetController@editTweet');
@@ -43,7 +42,7 @@ Route::post('/editComment', 'TweetController@editComment');
 Route::post('/deleteComment', 'TweetController@deleteComment');
 
 Route::get('/tweetFeed/{id}', 'TweetController@showTweet');
-Route::get('/showProfiles', 'TweetController@showAllUsers');
-Route::get('/showProfiles', 'TweetController@followUsers');
+Route::get('/showAllUsers', 'TweetController@showAllUsers');
+Route::post('/followUsers', 'TweetController@followUsers');
 
 ?>

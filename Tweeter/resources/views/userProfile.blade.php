@@ -1,4 +1,6 @@
+@extends('layouts.app')
 
+@section('content')
     @foreach ($userProfile as $user}}</p>
         <p>{{ $user->username }}</p>
         <p>{{ $user->email }}</p>
@@ -17,5 +19,4 @@
     <input type="hidden" name="userId" value="{{$user->id}}">
     <button type="submit" value="{{$user->id}}">Delete Profile</button>
 </form>
-
-
+@endsection

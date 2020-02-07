@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 form action="/editUserProfile" method="post">
     @csrf
 
@@ -39,3 +43,4 @@ form action="/editUserProfile" method="post">
     <input type="text" name="country" id="text"><br><br>
     <input type="submit" name="edit" value="Edit Profile" id="button">
 </form>
+@endsection

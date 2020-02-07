@@ -61,19 +61,28 @@ class TweetController extends Controller
     public function showAllUsers(){
         if (Auth::check()) {
             $result = \App\User::all();
-            $follows=\App\Follows::where('following',Auth::user()->name)->get();
+            $follows=\App\FollowRelationship::where('user_id',Auth::user()->name)->get();
             return view('allUsers',['users'=>$result, 'follows'=>$follows]);
         } else {
             return redirect('/home');
         }
     }
     public function followUsers(Request $request){
-        $follows = new \App\Follows;
-        $follows->following= Auth::user()->name;
-        $follows->followed=$request->name;
-        $follows->save();
+        if (Auth::check()) {
+            $follows = new \App\FollowRelationship;
+            $follows->user_id = Auth::user()->id;
+            $follows->followedUser_id =$request->followedUserId;
+            $follows->save();
 
-        return view('followUsers', ['follows'=>$follows]);
+            //$result = \App\Tweet::all();
+            //return view('tweetFeed', ['tweets'=>$result]);
+
+            $followingUsers = \App\followRelationship::where('followedUser_id', $request->followedUserId)
+                                ->leftJoin('users', 'followRelationship.user_id', '=', 'users.id')
+                                ->select('users.name')->get();
+
+            return view('followUsers', ['follows'=>$followingUsers]);
+        }
     }
     public function saveLike(Request $request){
         if (Auth::check()) {
@@ -98,22 +107,22 @@ class TweetController extends Controller
             return view('tweetFeed', ['tweets'=>$result]);
         } else {
             return view('tweetFeed');
-    }
-    }
-    public function commentForm(Request $request) {
-
-        return view('commentForm', ['tweet'=>$request->tweetId, 'comment'=>$request->commentId]);
+        }
     }
     public function showComments(Request $request){
         if (Auth::check()) {
             $comments = \App\Comment::where('tweet_id', $request->tweetId)->get();
             if (sizeOf($comments) > 0) {
-                //$user = \App\User::find($request->userName);
                 return view('comments',['comments' => $comments]);
             } else {
-                return view('tweetFeed');
+
+                $result = \App\Tweet::all();
+                return view('tweetFeed', ['tweets'=>$result]);
             }
         }
+    }
+    public function commentForm(Request $request) {
+        return view('commentForm', ['tweet'=>$request->tweetId, 'commentId'=>$request->commentId]);
     }
     public function editComment(Request $request){
         $comment = \App\Comment::find($request->commentId);

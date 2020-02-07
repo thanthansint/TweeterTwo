@@ -162,6 +162,7 @@ footer {
 
 #tweet-style {
   border: 1px solid gray;
+  margin-left: 5vw;
 }
 
 @media (max-width: 600px) {
