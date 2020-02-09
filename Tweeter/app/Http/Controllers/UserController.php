@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 
 class UserController extends Controller
 {
@@ -58,32 +58,28 @@ class UserController extends Controller
         return view('userProfile');
     }
     public function showUserProfile(Request $request){
-        $userProfile = \App\User::find($request->id);
-        return view('userProfile', ['userProfile'=>$userProfile]);
+        if (Auth::check()){
+            error_log(Auth::user()->id);
+            $userProfile = \App\User::find(Auth::user()->id);
+            return view('userProfile', ['userProfile'=>$userProfile]);
+        } else {
+            return view('tweetFeed');
+        }
     }
     public function editUserProfileForm() {
         return view('editUserProfileForm');
     }
     public function editUserProfile(Request $request) {
         $validatedData = $request->validate([
-            'username' => 'required|max:255',
-            'email'=>'email:rfc,dns',
-            'password'=>'required|max:255'
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
         $newuser = \App\User::find($request->userId);
-        $newuser->username = $request->username;
+        $newuser->name = $request->name;
         $newuser->email = $request->email;
         $newuser->password = $request->password;
-        $newuser->birthday = $request->month.'/'.$request->day.'/'.$request->year;
-        if ($request->female) {
-            $newuser->gender = "female";
-        } else if ($request->male){
-            $newuser->gender = "male";
-        } else {
-            $newuser->gender = "other";
-        }
-        $newuser->username = $request->city.' '.$request->country;
         $newuser->save();
 
         return view('tweetFeed');

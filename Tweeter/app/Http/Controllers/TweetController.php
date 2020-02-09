@@ -10,6 +10,7 @@ class TweetController extends Controller
     public function show() {
         if (Auth::check()) {
            $result = \App\Tweet::all();
+
             return view('tweetFeed',['tweets'=>$result]);
         } else {
             return view('tweetFeed');
@@ -53,43 +54,72 @@ class TweetController extends Controller
         $result = \App\Tweet::all();
         return view('tweetFeed',['tweets'=>$result]);
     }
+    public function deleteTweetForm(Request $request){
+        $tweet = \App\Tweet::find($request->id);
+        return view('deleteTweetForm', ['tweet'=>$tweet]);
+    }
     public function deleteTweet(Request $request){
-           \App\Tweet::destroy($request->id);
-           $result = \App\Tweet::all();
+        if (isset($request->yes)) {
+            \App\Tweet::destroy($request->id);
+            $result = \App\Tweet::all();
             return view('tweetFeed', ['tweets'=>$result] );
+        } else {
+            $result = \App\Tweet::all();
+            return view('tweetFeed', ['tweets'=>$result] );
+        }
     }
     public function showAllUsers(){
         if (Auth::check()) {
             $result = \App\User::all();
-            $follows=\App\FollowRelationship::where('user_id',Auth::user()->name)->get();
+            $follows=\App\FollowRelationship::where('user_id',Auth::user()->id)->get();
             return view('allUsers',['users'=>$result, 'follows'=>$follows]);
         } else {
             return redirect('/home');
         }
     }
     public function followUsers(Request $request){
-        if (Auth::check()) {
-            $follows = new \App\FollowRelationship;
-            $follows->user_id = Auth::user()->id;
-            $follows->followedUser_id =$request->followedUserId;
-            $follows->save();
+        // if (Auth::check()) {
+        //     $follows = new \App\FollowRelationship;
+        //     $follows->user_id = Auth::user()->id;
+        //     $follows->followedUser_id =$request->followedUserId;
+        //     $follows->save();
 
-            //$result = \App\Tweet::all();
-            //return view('tweetFeed', ['tweets'=>$result]);
+        //     //$result = \App\Tweet::all();
+        //     //return view('tweetFeed', ['tweets'=>$result]);
 
-            $followingUsers = \App\followRelationship::where('followedUser_id', $request->followedUserId)
-                                ->leftJoin('users', 'followRelationship.user_id', '=', 'users.id')
-                                ->select('users.name')->get();
+        //     $followingUsers = \App\followRelationship::where('followedUser_id', $request->followedUserId)
+        //                         ->leftJoin('users', 'followRelationship.user_id', '=', 'users.id')
+        //                         ->select('users.name')->get();
 
-            return view('followUsers', ['follows'=>$followingUsers]);
-        }
+        //     return view('followUsers', ['follows'=>$followingUsers]);
+        // }
+        $follows = new \App\FollowRelationship;
+        $follows->user_id = Auth::user()->id;
+        $follows->followedUser_id = $request->followedUserId;
+        $follows->save();
+        $result = \App\Tweet::all();
+        return view('tweetFeed', ['tweets'=>$result]);
     }
+    public function unfollowUsers(Request $request){
+        error_log($request->unfollowedUserId);
+        error_log(Auth::user()->id);
+        $unfollowUser = \App\FollowRelationship::where('followedUser_id',$request->unfollowedUserId)->where('user_id', Auth::user()->id)->get();
+        foreach ($unfollowUser as $unfollow){
+            \App\FollowRelationship::destroy($unfollow->id);
+        }
+        $result = \App\Tweet::all();
+        return view('tweetFeed', ['tweets'=>$result]);
+    }
+
     public function saveLike(Request $request){
+
         if (Auth::check()) {
             $like = new \App\Like;
             $like->user_id = Auth::user()->id;
             $like->tweet_id = $request->tweetId;
             $like->save();
+            // $count = \App\Like::where('tweet_id', $request->tweetId)->get();
+            // error_log(sizeOf($count));
             $result = \App\Tweet::all();
             return view('tweetFeed', ['tweets'=>$result]);
         } else {
@@ -115,9 +145,9 @@ class TweetController extends Controller
             if (sizeOf($comments) > 0) {
                 return view('comments',['comments' => $comments]);
             } else {
-
-                $result = \App\Tweet::all();
-                return view('tweetFeed', ['tweets'=>$result]);
+                return view('noComment');
+                // $result = \App\Tweet::all();
+                // return view('tweetFeed', ['tweets'=>$result]);
             }
         }
     }
@@ -134,6 +164,6 @@ class TweetController extends Controller
     public function deleteComment(Request $request){
         \App\Comment::destroy($request->commentId);
         $result = \App\Tweet::all();
-         return view('tweetFeed', ['tweets'=>$result] );
- }
+        return view('tweetFeed', ['tweets'=>$result] );
+    }
 }

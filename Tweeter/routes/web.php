@@ -18,18 +18,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/homepage', 'UserController@homepage');
-// Route::get('/checkLogin', 'UserController@checkLogin');
-// Route::post('/userSignup', 'UserController@userSignup');
-Route::post('/userProfile', 'UserController@userProfile');
-Route::post('/userProfile', 'UserController@showUserProfile');
+
+//Route::post('/userProfile', 'UserController@userProfile');
+Route::post('/showUserProfile', 'UserController@showUserProfile');
 Route::post('/editUserProfileForm', 'UserController@editUserProfileForm');
-Route::post('/tweetFeed', 'UserController@editUserProfile');
-Route::post('/tweetFeed', 'UserController@deleteUserProfile');
+Route::post('/editUserProfile', 'UserController@editUserProfile');
+Route::post('/deleteUserProfile', 'UserController@deleteUserProfile');
 
 Route::get('/tweetFeed', 'TweetController@show');
 Route::get('/createTweetForm', 'TweetController@createTweetForm');
 Route::get('/createTweet', 'TweetController@createTweet');
+Route::post('/deleteTweetForm', 'TweetController@deleteTweetForm');
 Route::post('/deleteTweet', 'TweetController@deleteTweet');
 Route::post('/editTweetForm', 'TweetController@showEditForm');
 Route::post('/editTweet', 'TweetController@editTweet');
@@ -44,5 +43,6 @@ Route::post('/deleteComment', 'TweetController@deleteComment');
 Route::get('/tweetFeed/{id}', 'TweetController@showTweet');
 Route::get('/showAllUsers', 'TweetController@showAllUsers');
 Route::post('/followUsers', 'TweetController@followUsers');
+Route::get('/unfollowUsers', 'TweetController@unfollowUsers');
 
 ?>
