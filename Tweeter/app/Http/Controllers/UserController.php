@@ -59,35 +59,40 @@ class UserController extends Controller
     }
     public function showUserProfile(Request $request){
         if (Auth::check()){
-            error_log(Auth::user()->id);
             $userProfile = \App\User::find(Auth::user()->id);
             return view('userProfile', ['userProfile'=>$userProfile]);
         } else {
             return view('tweetFeed');
         }
     }
-    public function editUserProfileForm() {
-        return view('editUserProfileForm');
+    public function editUserProfileForm(Request $request) {
+        return view('editUserProfileForm',['userId'=>Auth::user()->id]);
     }
     public function editUserProfile(Request $request) {
         $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8']
         ]);
 
-        $newuser = \App\User::find($request->userId);
+        $newuser = \App\User::find(Auth::user()->id);
         $newuser->name = $request->name;
         $newuser->email = $request->email;
         $newuser->password = $request->password;
         $newuser->save();
 
-        return view('tweetFeed');
+        $result = \App\Tweet::all();
+        return view('tweetFeed',['tweets'=>$result]);
     }
-
+    public function deleteUserProfileForm(Request $request) {
+        return view('deleteUserProfileForm',['userId'=>Auth::user()->id]);
+    }
     public function deleteUserProfile(Request $request){
-        \App\User::destroy($request->userId);
-         return view('tweetFeed');
+        if (isset($request->yes)) {
+            \App\User::destroy(Auth::user()->id);
+        }
+            $result = \App\Tweet::all();
+            return view('tweetFeed', ['tweets'=>$result] );
     }
 
 }

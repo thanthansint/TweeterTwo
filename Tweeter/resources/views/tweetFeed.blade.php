@@ -9,17 +9,31 @@
             <button type="submit" value="">Follow</button>
             </form>
         </span>
-        <br>
-        <a href="createTweetForm" >Create Tweet</a><br>
-
-        <form action="/showUserProfile" method="post">
+        <form action="/showUserProfile" method="get">
             @csrf
             <button type="submit" value="">User's Profile</button>
         </form>
+        <form action="/editUserProfileForm" method="post">
+            @csrf
+            <input type="hidden" name="userId" value="{{Auth::user()->id}}">
+            <button type="submit" value="">Edit Profile</button>
+        </form>
+        <form action="/deleteUserProfileForm" method="post">
+            @csrf
+            <input type="hidden" name="userId" value="{{Auth::user()->id}}">
+            <button type="submit" value="">Delete Profile</button>
+        </form>
+        <form action="/tweetFeed" method="get">
+            @csrf
+            <input type="hidden" name="userId" value="{{Auth::user()->id}}">
+            <button type="submit" value="">All Tweets</button>
+        </form>
         <div>
-            <input type="text" name="search" id="search">
-            <button type="submit" name="search" value="">Search</button>
-
+            <form action="/searchTweet" method="post">
+                @csrf
+                <input type="text" name="searchText" value="">
+                <button type="submit" name="search">Search</button>
+            </form>
         </div>
         @guest
             <p>Go Sign Up!</p>
@@ -48,7 +62,7 @@
                             <input type="hidden" name="tweetId" value="{{$tweet->id}}">
                             <input type="hidden" name="userId" value="{{Auth::user()->id}}">
                             <span>Comment</span>
-                            <input type="text" name="comment" value=" ">
+                            <input type="text" name="comment">
                             <input type="submit" name="submit" value="-->">
                         </form>
                         <form action="/showComments" method="post">
