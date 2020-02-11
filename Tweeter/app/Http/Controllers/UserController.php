@@ -90,6 +90,24 @@ class UserController extends Controller
     public function deleteUserProfile(Request $request){
         if (isset($request->yes)) {
             \App\User::destroy(Auth::user()->id);
+            $result = \App\Tweet::where('user_id', Auth::user()->id)->get();
+            if (sizeOf($result)>0) {
+                foreach ($result as $r) {
+                    \App\Tweet::destroy($r->id);
+                }
+            }
+            $result = \App\Like::where('user_id', Auth::user()->id)->get();
+            if (sizeOf($result)>0) {
+                foreach ($result as $r) {
+                    \App\Tweet::destroy($r->id);
+                }
+            }
+            $result = \App\FollowRelationship::where('user_id', Auth::user()->id)->get();
+            if (sizeOf($result)>0) {
+                foreach ($result as $r) {
+                    \App\Tweet::destroy($r->id);
+                }
+            }
         }
             $result = \App\Tweet::all();
             return view('tweetFeed', ['tweets'=>$result] );
