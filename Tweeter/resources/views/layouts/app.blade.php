@@ -28,7 +28,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -77,7 +77,94 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
+
+        {{-- <nav class="nav-extended">
+            <div class="nav-wrapper">
+              <a href="#" class="brand-logo">Logo</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item fontColor" href="{{ route('logout') }}"
+
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../tweetFeed">{{ __('TweetFeed') }}</a>
+                            </li>
+                @endguest
+              </ul>
+            </div>
+          </nav>
+
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+                </ul> --}}
+
+
+        <nav>
+            <div class="nav-wrapper pink darken-3">
+              <a href="#" class="brand-logo center">Tweeter</a>
+              <ul id="nav-mobile col s12" >
+                    @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                    @else
+                    <div class="col s6 m6 l6 left">
+                        <li class="nav-item" >
+                            <div>
+                                <a class="" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="col s6 m6 l6 right">
+                        <li class="nav-item" class="col s6 right">
+                            <a class="nav-link" href="../tweetFeed">{{ __('TweetFeed') }}</a>
+                        </li>
+                    </div>
+                @endguest
+              </ul>
+            </div>
+          </nav>
 
         <main class="py-4">
             @yield('content')

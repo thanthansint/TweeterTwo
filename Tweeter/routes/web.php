@@ -21,11 +21,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::post('/userProfile', 'UserController@userProfile');
 Route::get('/showUserProfile', 'UserController@showUserProfile');
+
 Route::post('/editUserProfileForm', 'UserController@editUserProfileForm');
 Route::post('/editUserProfile', 'UserController@editUserProfile');
 Route::post('/deleteUserProfile', 'UserController@deleteUserProfile');
 Route::post('/deleteUserProfileForm', 'UserController@deleteUserProfileForm');
 
+Route::get('/noUser', 'TweetController@noUser');
 Route::post('/searchTweet', 'TweetController@searchTweet');
 Route::get('/tweetFeed', 'TweetController@show');
 Route::get('/createTweetForm', 'TweetController@createTweetForm');

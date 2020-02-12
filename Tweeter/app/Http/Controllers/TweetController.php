@@ -7,6 +7,9 @@ use Auth;
 
 class TweetController extends Controller
 {
+    public function noUser(Request $request) {
+        return view('noUser');
+    }
     public function searchTweet(Request $request) {
         $user = \App\User::where('name', $request->searchText)->get();
         if (sizeOf($user) >0) {
@@ -15,8 +18,9 @@ class TweetController extends Controller
             }
                 return view('tweetFeed',['tweets'=>$result]);
         } else {
-            $result = \App\Tweet::all();
-            return view('tweetFeed',['tweets'=>$result]);
+            return view('noUser');
+            // $result = \App\Tweet::all();
+            // return view('tweetFeed',['tweets'=>$result]);
         }
     }
     public function show() {
@@ -70,6 +74,19 @@ class TweetController extends Controller
     }
     public function deleteTweet(Request $request){
         if (isset($request->yes)) {
+            $results = \App\Like::where('tweet_id', $request->id)->get();
+            if (sizeOf($results)>0) {
+                foreach ($results as $r) {
+                    \App\Like::destroy($r->id);
+                }
+            }
+
+            $result2 = \App\Comment::where('tweet_id',$request->id)->get();
+            if (sizeOf($result2)>0) {
+                foreach ($result2 as $r) {
+                    \App\Comment::destroy($r->id);
+                }
+            }
             \App\Tweet::destroy($request->id);
         }
         $result = \App\Tweet::all();

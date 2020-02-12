@@ -63,7 +63,7 @@
                         <label>By Author</label>
                     </div>
                     <div class="col s4 m4 l4">
-                        <button class="btn blue-grey darken-2" type="submit" name="search">Search</button>
+                        <button class="btn pink darken-1" type="submit" name="search">Search</button>
                     </div>
                 </form>
             </div>
@@ -81,14 +81,14 @@
                                     <form action="/editTweetForm" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$tweet->id}}">
-                                        <button class="btn-small blue-grey darken-2" id="borderStyle" type="submit" value="{{$tweet->id}}">Edit</button><br><br>
+                                        <button class="btn-small pink darken-1" id="borderStyle" type="submit" value="{{$tweet->id}}">Edit</button><br><br>
                                     </form>
                                 </div>
                                 <div class="col s6 m6 l6">
                                     <form action="/deleteTweetForm" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$tweet->id}}">
-                                        <button class="btn-small blue-grey darken-2" id="borderStyle" type="submit" value="{{$tweet->id}}">Delete</button>
+                                        <button class="btn-small pink darken-1" id="borderStyle" type="submit" value="{{$tweet->id}}">Delete</button>
                                     </form>
                                 </div>
                             </div>
@@ -103,15 +103,15 @@
                             <div class="col s4 m4 l4">
                                 <form action="/saveLike" method="post">
                                     @csrf
+                                    <div class="col s2 m2 l2 push-s2">
+                                        <br>
+                                        <label>{{$count}}</label>
+                                    </div>
                                     <div class="col s2 m2 l2 pull-s2">
                                         <br>
                                         <input type="hidden" name="tweetId" value="{{$tweet->id}}">
                                         <input type="hidden" name="userId" value="{{Auth::user()->id}}">
-                                        <button class="grey-text text-darken-4" type="submit" value="{{$tweet->id}}">Like</button>
-                                    </div>
-                                    <div class="col s2 m2 l2 push-s2">
-                                        <br>
-                                        <label>{{$count}}</label>
+                                        <button class="btn pink-text text-darken-2 light-green lighten-5" type="submit" value="{{$tweet->id}}">Like</button>
                                     </div>
                                 </form>
                             </div>
@@ -126,7 +126,7 @@
                                     </div>
                                     <div class="col s2 m3 l4 ">
                                         <br>
-                                        <button><i class="Tiny material-icons" class="btn blue-grey darken-2" type="submit" name="submit" value="{{$tweet->id}}">add_box</i></button>
+                                        <button><i class="Tiny material-icons" class="btn pink darken-1" type="submit" name="submit" value="{{$tweet->id}}">add_box</i></button>
                                     </div>
                                 </form>
                             </div>
@@ -135,7 +135,7 @@
                             @csrf
                             <input type="hidden" name="tweetId" value="{{$tweet->id}}">
                             <input type="hidden" name="userId" value="{{Auth::user()->id}}">
-                            <button class="btn-small grey-text text-darken-4 card light-green lighten-5" type="submit" value="{{$tweet->id}}">Show Comments</button>
+                            <button class="btn-small pink darken-1" type="submit" value="{{$tweet->id}}">Show Comments</button>
                         </form>
                     </div>
                 </div>
