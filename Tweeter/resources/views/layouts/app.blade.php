@@ -129,42 +129,44 @@
 
 
         <nav>
-            <div class="nav-wrapper pink darken-3">
-              <a href="#" class="brand-logo center">Tweeter</a>
-              <ul id="nav-mobile col s12" >
-                    @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @if (Route::has('register'))
+            <div class="nav-wrapper  pink darken-2">
+                <div class="container">
+                <a href="#" class="brand-logo center" id="logo-style">TWEETER</a>
+                <ul id="nav-mobile col s12" >
+                        @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
-                    @endif
-                    @else
-                    <div class="col s6 m6 l6 left">
-                        <li class="nav-item" >
-                            <div>
-                                <a class="" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endif
+                        @else
+                            <div class="col s4 m4 l4 left">
+                                <li class="nav-item">
+                                    <div>
+                                        <a  id="submenu-style" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
                             </div>
-                        </li>
-                    </div>
-                    <div class="col s6 m6 l6 right">
-                        <li class="nav-item" class="col s6 right">
-                            <a class="nav-link" href="../tweetFeed">{{ __('TweetFeed') }}</a>
-                        </li>
-                    </div>
-                @endguest
-              </ul>
+                            <div class="col s4 m4 l4 right">
+                                <li class="nav-item" class="col s6 right">
+                                    <a  id="submenu-style" class="nav-link" href="../tweetFeed">{{ __('Tweets') }}</a>
+                                </li>
+                            </div>
+                        @endguest
+                    </ul>
+                </div>
             </div>
-          </nav>
+        </nav>
 
         <main class="py-4">
             @yield('content')

@@ -1,137 +1,26 @@
+@import "variables";
 
+@mixin font-setting($f-size, $f-color, $f-type){
+    font-size: $f-size;
+    color :$f-color;
+    font-family: $f-type;
+}
+@mixin border-setting($b-radius, $b){
+    border-radius: $b-radius;
+    border : $b;
+}
 #margin{
-    margin : 50px 0;
+    margin : 40px 0;
 }
-#fontStyle {
-    font-family: sans-serif;
-    color : rgb(81, 81, 85);
-    font-size: 20px;
+#border-style {
+   @include border-setting(12px, 1px solid $grey);
 }
-#borderStyle {
-    border-radius: 20px;
+#font-style {
+    @include font-setting(17px, $grey, Georgia);
 }
-#header-style{
-    color : plum;
+#logo-style {
+    @include font-setting(25px, $white, Georgia);
 }
-
- @import "variables";
-
-// @mixin font-setting( $font-type, $f-size, $f-color,$bg-color, $padd, $t-align) {
-//     font-family: $font-type;
-//     font-size:$f-size;
-//     color :$f-color;
-//     background-color:$bg-color;
-//     padding : $padd;
-//     text-align: $t-align;
-//     //font-family: Verdana, Geneva, Tahoma, sans-serif;
-// }
-// @mixin width-height($w, $h) {
-//     width : $w;
-//     height : $h;
-// }
-// @mixin grid-layout($d, $g-c, $g-r, $j-c, $a-c){
-//     display: $d;
-//     grid-template-columns: $g-c;
-//     grid-template-rows: $g-r;
-//     justify-content: $j-c;
-//     align-content: $a-c;
-// }
-// @mixin border-radius($t-l, $t-r, $b-l, $b-r) {
-//     border-top-left-radius: $t-l;
-//     border-top-right-radius: $t-r;
-//     border-bottom-left-radius: $b-l;
-//     border-bottom-right-radius: $b-r;
-// }
-// * {
-//     box-sizing: border-box;
-//   }
-//   /* Style the header */
-// header {
-//     @include font-setting($font, none, white, #666, 2px, center);
-//     @include width-height(none, 15vh);
-//     @include border-radius(none, none, 50px, 50px);
-//   }
-
-// nav {
-//     float: left;
-//     @include width-height(10vw, 75vh);
-//     @include font-setting($font, none, none, rgb(253, 183, 183), none, none);
-//   }
-
-// nav ul {
-//     list-style-type : none;
-//     padding: 0;
-//   }
-//  section {
-//     content: "";
-//     display: table;
-//     clear: both;
-//  }
-
-// article {
-//     float: left;
-//     @include width-height(98vw, auto);
-//     @include font-setting($font, none, none, #f1f1f1, 2vw, none);
-//     @include border-radius(50px, 50px, 50px, 50px);
-// }
-
-//   /* Style the footer */
-// footer {
-//     @include font-setting($font, none, white, #777, 10px, center);
-//     @include width-height(none, 10vh);
-//     @include border-radius(50px, 50px, none, none);
-// }
-// #tab {
-//     padding-right: 15px;
-// }
-// #user-login {
-//     padding-left : 80px;
-// }
-// #exist-user {
-//     border-bottom: 2px solid gray;
-//     font-weight: bold;
-//     @include width-height(20vw, none);
-//     @include font-setting($font, none, none, none, 15px 0, none);
-// }
-// #grid {
-//     @include grid-layout(grid, 40vw 50vw, 1fr, center, center);
-// }
-
-// #birthday{
-//     display: inline-block;
-//     border: groove;
-//     vertical-align: middle;
-//     @include width-height(39.1vw,6.6vh);
-// }
-// #text {
-//     @include width-height(12.5vw, 5.2vh);
-// }
-// #search {
-//     @include width-height(50vw, 5.2vh);
-//     display: inline;
-//     position: relative;
-//     top : 6vh;
-//     left : 25vw;
-// }
-// #button {
-//     border-radius: 10px;
-//     @include font-setting($font, 18px, white, #666, 3px, center);
-//     @include width-height(7vw, 3vw);
-// }
-// #userHeader {
-//     @include width-height(100vw, 15vh);
-//     @include font-setting($font, 18px, white, #666, 3px, center);
-// }
-// #tab1 {
-//     list-style-type: none;
-//     @include font-setting($font, 20px, #666, none, 50px, center);
-// }
-// #tweet-style{
-//     border : 1px solid gray;
-//     margin-left: 5vw;
-// }
-// @media (max-width: 600px) {
-//     nav, article {
-//     @include width-height(100vw, auto);
-//     }
-// }
+#submenu-style {
+    @include font-setting(18px, $white, Georgia);
+}

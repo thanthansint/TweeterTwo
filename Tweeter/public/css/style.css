@@ -1,18 +1,27 @@
 #margin {
-  margin: 50px 0;
+  margin: 40px 0;
 }
 
-#fontStyle {
-  font-family: sans-serif;
-  color: #515155;
-  font-size: 20px;
+#border-style {
+  border-radius: 12px;
+  border: 1px solid #3d3c3c;
 }
 
-#borderStyle {
-  border-radius: 20px;
+#font-style {
+  font-size: 17px;
+  color: #3d3c3c;
+  font-family: Georgia;
 }
 
-#header-style {
-  color: plum;
+#logo-style {
+  font-size: 25px;
+  color: #fdfdfd;
+  font-family: Georgia;
+}
+
+#submenu-style {
+  font-size: 18px;
+  color: #fdfdfd;
+  font-family: Georgia;
 }
 

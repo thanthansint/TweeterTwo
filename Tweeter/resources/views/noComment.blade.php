@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    <p>There is No comments!</p>
-    <a href="tweetFeed" id="tab1">Back</a>
+    <div class="container  center-align">
+        <br><br>
+        <p id="font-style">There is No comments!</p>
+        <a class="btn pink darken-1" href="tweetFeed" id="tab1">Back</a>
+    </div>
 @endsection

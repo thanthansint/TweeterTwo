@@ -9,7 +9,7 @@
         </div>
         <form action="/tweetFeed" method="get">
             @csrf
-            <button class="btn blue-grey darken-2" id="borderStyle" type="submit" value="{{$userProfile->id}}">Back</button>
+            <button class="btn blue-grey darken-2" id="border-style" type="submit" value="{{$userProfile->id}}">Back</button>
         </form>
     </div>
 @endsection
