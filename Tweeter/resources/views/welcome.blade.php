@@ -86,7 +86,7 @@
                    Welcome To TWEETER
                 </div>
                 <div>
-                    <img src="../image/birds-singing.jpg" alt="birds singing">
+                    <img class="responsive-img" src="../image/birds-singing.jpg" alt="birds singing">
                 </div>
             </div>
 
@@ -100,7 +100,6 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div> --}}
-            </div>
         </div>
     </body>
 </html>

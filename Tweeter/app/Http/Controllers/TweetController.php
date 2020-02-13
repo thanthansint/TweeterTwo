@@ -19,8 +19,6 @@ class TweetController extends Controller
                 return view('tweetFeed',['tweets'=>$result]);
         } else {
             return view('noUser');
-            // $result = \App\Tweet::all();
-            // return view('tweetFeed',['tweets'=>$result]);
         }
     }
     public function show() {
@@ -55,7 +53,6 @@ class TweetController extends Controller
          } else {
             return view('tweetFeed');
         }
-        // return view('createTweet');
     }
     public function showEditForm(Request $request){
         $tweet = \App\Tweet::find($request->id);

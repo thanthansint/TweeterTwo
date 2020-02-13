@@ -4,7 +4,7 @@
     <div class="container  center-align">
         <div>
             <div class="row" id="margin" >
-                <div class="col s12 ">
+                <div class="col s12">
                     <img class="responsive-img" id="image-size" src="../image/single-bird.jpg" alt="bird">
                 </div>
                 <div class="col s12 m6 l3">
@@ -53,13 +53,13 @@
         @guest
             <blockquote>Go Sign Up!</blockquote>
         @else
-            <h4 id="margin"><span> WELCOME</span><strong  id="welcome"> {{ Auth::user()->name }}</strong></h4>
+            <h3 id="margin"><span> WELCOME</span><strong  id="welcome"> {{ Auth::user()->name }}</strong></h3>
             <div class="row">
-                <form class="col s12" action="/searchTweet" method="post">
+                <form class="col s12" id="margin" action="/searchTweet" method="post">
                     <div class="input-field col s8 m8 l8">
                         @csrf
                         <i class="material-icons prefix">person</i>
-                        <input type="text" name="searchText">
+                        <input type="text" name="searchText" required autocomplete="searchText">
                         <label>By Author</label>
                     </div>
                     <div class="col s4 m4 l4">
@@ -73,7 +73,7 @@
                     $comments = \App\Tweet::find($tweet->id)->comments;
                 @endphp
 
-                    <div class="card-panel lime lighten-5">
+                    <div class="card-panel lime lighten-5" id="margin">
                         <br>
                         <div class="col s12">
                             @if (Auth::user()->id == $tweet->user_id)
@@ -126,19 +126,12 @@
                                         @csrf
                                         <input type="hidden" name="tweetId" value="{{$tweet->id}}">
                                         <input type="hidden" name="userId" value="{{Auth::user()->id}}">
-                                        <input type="text" name="comment">
+                                        <input type="text" name="comment" required autocomplete="comment">
                                         <label>Comment</label>
                                     </div>
-
                                 </form>
                             </div>
                         </div>
-                        {{-- <form action="/showComments" method="post">
-                            @csrf
-                            <input type="hidden" name="tweetId" value="{{$tweet->id}}">
-                            <input type="hidden" name="userId" value="{{Auth::user()->id}}">
-                            <button class="btn pink darken-1" id="border-style" type="submit" value="{{$tweet->id}}">Show Comments</button>
-                        </form> --}}
                         <div class="card-panel col s6">
                             @if (sizeOf($comments)==0)
                                 <p> No Comments!</p>
@@ -171,10 +164,8 @@
                             @endif
                         </div>
                     </div>
-
                 <div class="divider"></div>
             @endforeach
         @endguest
     </div>
 @endsection
-

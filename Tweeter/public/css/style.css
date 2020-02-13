@@ -97,7 +97,7 @@
 
   #welcome {
     font-size: 55px;
-    color: #f6993f;
+    color: #38c172;
     font-family: Georgia;
   }
 
@@ -130,13 +130,13 @@
   #submenu-style {
     font-size: 25px;
     color: #fdfdfd;
-    font-family: Georgia;
+    font-family: Nunito;
   }
 
   #welcome {
-    font-size: 55px;
-    color: #38c172;
-    font-family: Georgia;
+    font-size: 80px;
+    color: #3490dc;
+    font-family: Nunito;
   }
 
   #tweet-font-style {
@@ -148,7 +148,7 @@
   #logo-style {
     font-size: 45px;
     color: #fdfdfd;
-    font-family: Georgia;
+    font-family: Nunito;
   }
 }
 

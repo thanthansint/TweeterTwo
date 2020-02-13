@@ -67,7 +67,7 @@
         @include font-setting(20px, $grey, Georgia);
     }
     #welcome{
-        @include font-setting(55px, $orange, Georgia);
+        @include font-setting(55px, $green, Georgia);
     }
     #tweet-font-style {
         @include font-setting(20px, $grey, Georgia);
@@ -84,15 +84,15 @@
         @include font-setting(20px, $grey, Georgia);
     }
     #submenu-style {
-        @include font-setting(25px, $white, Georgia);
+        @include font-setting(25px, $white, Nunito);
     }
     #welcome{
-        @include font-setting(55px, $green, Georgia);
+        @include font-setting(80px, $blue, Nunito);
     }
     #tweet-font-style {
         @include font-setting(20px, $grey, Georgia);
     }
     #logo-style {
-        @include font-setting(45px, $white, Georgia);
+        @include font-setting(45px, $white, Nunito);
     }
 }
