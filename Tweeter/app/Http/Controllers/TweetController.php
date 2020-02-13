@@ -116,15 +116,20 @@ class TweetController extends Controller
     }
 
     public function saveLike(Request $request){
+        $find = \App\Like::where('user_id', Auth::user()->id)->where('tweet_id',$request->tweetId)->get();
+
         if (Auth::check()) {
-            $like = new \App\Like;
-            $like->user_id = Auth::user()->id;
-            $like->tweet_id = $request->tweetId;
-            $like->save();
-            $result = \App\Tweet::all();
-            return view('tweetFeed', ['tweets'=>$result]);
-        } else {
-            return view('tweetFeed');
+            if (sizeOf($find)==0) {
+                $like = new \App\Like;
+                $like->user_id = Auth::user()->id;
+                $like->tweet_id = $request->tweetId;
+                $like->save();
+                $result = \App\Tweet::all();
+                return view('tweetFeed', ['tweets'=>$result]);
+            } else {
+                $result = \App\Tweet::all();
+                return view('tweetFeed', ['tweets'=>$result]);
+            }
         }
     }
     public function saveComment(Request $request){

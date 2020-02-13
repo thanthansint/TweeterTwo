@@ -3,9 +3,8 @@
 @section('content')
     <div class="container center-align">
         <div class="card-panel  light-green lighten-5" id="font-style">
-            <p>Username :{{$userProfile->name}}</p>
-            <p>Email :{{$userProfile->email}}</p>
-            <p>Password :{{$userProfile->password}}</p>
+            <p id="font-style">Username :{{$userProfile->name}}</p>
+            <p id="font-style">Email :{{$userProfile->email}}</p>
         </div>
         <form action="/tweetFeed" method="get">
             @csrf
