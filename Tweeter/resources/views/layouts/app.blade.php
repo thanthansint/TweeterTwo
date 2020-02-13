@@ -131,7 +131,7 @@
         <nav>
             <div class="nav-wrapper  pink darken-1">
                 <div class="container">
-                <a href="#" class="brand-logo center" id="logo-style">TWEETER</a>
+                <a href="#" class="brand-logo center" class="btn-floating btn-large cyan pulse" id="logo-style">TWEETER</a>
                 <ul id="nav-mobile col s12" >
                         @guest
                         <li class="nav-item left">

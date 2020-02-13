@@ -53,7 +53,7 @@
         @guest
             <blockquote>Go Sign Up!</blockquote>
         @else
-            <h5 id="margin"><span id="welcome"> WELCOME</span><strong> {{ Auth::user()->name }}</strong></h5>
+            <h4 id="margin"><span> WELCOME</span><strong  id="welcome"> {{ Auth::user()->name }}</strong></h4>
             <div class="row">
                 <form class="col s12" action="/searchTweet" method="post">
                     <div class="input-field col s8 m8 l8">
@@ -70,8 +70,9 @@
             @foreach ($tweets as $tweet)
                 @php
                     $count = sizeOf(\App\Tweet::find($tweet->id)->likes);
+                    $comments = \App\Tweet::find($tweet->id)->comments;
                 @endphp
-                <div>
+
                     <div class="card-panel lime lighten-5">
                         <br>
                         <div class="col s12">
@@ -132,14 +133,45 @@
                                 </form>
                             </div>
                         </div>
-                        <form action="/showComments" method="post">
+                        {{-- <form action="/showComments" method="post">
                             @csrf
                             <input type="hidden" name="tweetId" value="{{$tweet->id}}">
                             <input type="hidden" name="userId" value="{{Auth::user()->id}}">
                             <button class="btn pink darken-1" id="border-style" type="submit" value="{{$tweet->id}}">Show Comments</button>
-                        </form>
+                        </form> --}}
+                        <div class="card-panel col s6">
+                            @if (sizeOf($comments)==0)
+                                <p> No Comments!</p>
+                                @else
+                                    @foreach ($comments as $comment)
+                                        <div class="row col s10">
+                                            <div class="col s4">
+                                                <p id="font-style"> {{$comment->content}}</p>
+                                            </div>
+                                            @if (Auth::user()->id == $comment->user_id)
+                                                <div class="col s3">
+                                                    <form action="/commentForm" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="tweetId" value="{{$comment->tweet_id}}">
+                                                        <input type="hidden" name="userId" value="{{Auth::user()->id}}">
+                                                        <button class="btn pink darken-1" id="border-style" type="submit" name="commentId" value="{{$comment->id}}">Edit</button>
+                                                    </form>
+                                                </div>
+                                                <div class="col s3">
+                                                    <form action="/deleteComment" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="tweetId" value="{{$comment->tweet_id}}">
+                                                        <input type="hidden" name="userId" value="{{Auth::user()->id}}">
+                                                        <button class="btn pink darken-1" id="border-style" type="submit" name="commentId" value="{{$comment->id}}">Delete</button>
+                                                    </form>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    @endforeach
+                            @endif
+                        </div>
                     </div>
-                </div>
+
                 <div class="divider"></div>
             @endforeach
         @endguest

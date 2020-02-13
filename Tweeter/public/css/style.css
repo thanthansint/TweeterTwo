@@ -1,6 +1,6 @@
 #margin {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #border-style {
@@ -27,8 +27,8 @@
   }
 
   #welcome {
-    font-size: 25px;
-    color: #3d3c3c;
+    font-size: 40px;
+    color: #c2185b;
     font-family: Georgia;
   }
 
@@ -39,7 +39,7 @@
   }
 
   #logo-style {
-    font-size: 25px;
+    font-size: 30px;
     color: #fdfdfd;
     font-family: Georgia;
   }
@@ -64,8 +64,8 @@
   }
 
   #welcome {
-    font-size: 30px;
-    color: #3d3c3c;
+    font-size: 45px;
+    color: #e3342f;
     font-family: Georgia;
   }
 
@@ -76,7 +76,7 @@
   }
 
   #logo-style {
-    font-size: 25px;
+    font-size: 40px;
     color: #fdfdfd;
     font-family: Georgia;
   }
@@ -96,8 +96,8 @@
   }
 
   #welcome {
-    font-size: 25px;
-    color: #3d3c3c;
+    font-size: 55px;
+    color: #f6993f;
     font-family: Georgia;
   }
 
@@ -108,7 +108,7 @@
   }
 
   #logo-style {
-    font-size: 40px;
+    font-size: 45px;
     color: #fdfdfd;
     font-family: Georgia;
   }
@@ -134,8 +134,8 @@
   }
 
   #welcome {
-    font-size: 25px;
-    color: #3d3c3c;
+    font-size: 55px;
+    color: #38c172;
     font-family: Georgia;
   }
 
@@ -146,7 +146,7 @@
   }
 
   #logo-style {
-    font-size: 40px;
+    font-size: 45px;
     color: #fdfdfd;
     font-family: Georgia;
   }
