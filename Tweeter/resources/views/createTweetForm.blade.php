@@ -8,7 +8,7 @@
         <div class="input-feild center-align">
             @csrf
             <label>Content</label>
-            <input type="text" class="form-control @error('content') is-invalid @enderror" name="content" value="" autofocus>
+            <input type="text" class="form-control @error('content') is-invalid @enderror" name="content" value="" autofocus required autocomplete="content">
                 @error('content')
                     <span class="invalid-feedback" role="alert">
                             <strong>{{$message}}</strong>
@@ -18,11 +18,11 @@
         <div class="row s12 m12 l12">
             <div class="col s12 m6 l6 center-align">
                 <br>
-                <input class="btn pink darken-1" type="submit" name="create" value="Create">
+                <input class="btn pink darken-1" id="border-style" type="submit" name="create" value="Create">
             </div>
             <div class="col s12 m6 l6 center-align">
                 <br>
-                <a class="btn pink darken-1" href="tweetFeed" id="tab1">Back</a>
+                <a class="btn pink darken-1" id="border-style" href="tweetFeed">Back</a>
             </div>
         </div>
     </form>

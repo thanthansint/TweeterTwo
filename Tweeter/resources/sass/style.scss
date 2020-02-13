@@ -10,17 +10,88 @@
     border : $b;
 }
 #margin{
-    margin : 40px 0;
+    margin-top : 40px;
+    margin-bottom: 40px;
 }
 #border-style {
    @include border-setting(12px, 1px solid $grey);
 }
-#font-style {
-    @include font-setting(17px, $grey, Georgia);
+#padding{
+    padding-left:50px;
 }
-#logo-style {
-    @include font-setting(25px, $white, Georgia);
+#tweeter-setting{
+    @include font-setting(50px, $pinky, none);
+    font-weight: bold;
 }
-#submenu-style {
-    @include font-setting(18px, $white, Georgia);
+@media screen and (max-width: 600px) {
+    #font-style {
+        @include font-setting(15px, none, Georgia);
+    }
+    #welcome{
+        @include font-setting(25px, $grey, Georgia);
+    }
+    #tweet-font-style {
+        @include font-setting(15px, $grey, Georgia);
+    }
+    #logo-style {
+        @include font-setting(25px, $white, Georgia);
+    }
+    #submenu-style {
+        @include font-setting(15px, $white, Georgia);
+    }
+    #image-size{
+        width: 50vw;
+        opacity: 1;
+    }
+}
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+    #font-style {
+        @include font-setting(18px, $grey, Georgia);
+    }
+    #welcome{
+        @include font-setting(30px, $grey, Georgia);
+    }
+    #tweet-font-style {
+        @include font-setting(18px, $grey, Georgia);
+    }
+    #logo-style {
+        @include font-setting(25px, $white, Georgia);
+    }
+    #submenu-style {
+        @include font-setting(20px, $white, Georgia);
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+    #font-style {
+        @include font-setting(20px, $grey, Georgia);
+    }
+    #welcome{
+        @include font-setting(25px, $grey, Georgia);
+    }
+    #tweet-font-style {
+        @include font-setting(20px, $grey, Georgia);
+    }
+    #logo-style {
+        @include font-setting(40px, $white, Georgia);
+    }
+    #submenu-style {
+        @include font-setting(22px, $white, Georgia);
+    }
+}
+@media screen and (min-width: 1200px) {
+    #font-style {
+        @include font-setting(20px, $grey, Georgia);
+    }
+    #submenu-style {
+        @include font-setting(25px, $white, Georgia);
+    }
+    #welcome{
+        @include font-setting(25px, $grey, Georgia);
+    }
+    #tweet-font-style {
+        @include font-setting(20px, $grey, Georgia);
+    }
+    #logo-style {
+        @include font-setting(40px, $white, Georgia);
+    }
 }

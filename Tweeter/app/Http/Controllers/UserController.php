@@ -71,7 +71,7 @@ class UserController extends Controller
     public function editUserProfile(Request $request) {
         $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
         ]);
 
         $newuser = \App\User::find(Auth::user()->id);

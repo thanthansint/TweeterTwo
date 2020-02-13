@@ -1,5 +1,6 @@
 #margin {
-  margin: 40px 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 #border-style {
@@ -7,21 +8,147 @@
   border: 1px solid #3d3c3c;
 }
 
-#font-style {
-  font-size: 17px;
-  color: #3d3c3c;
-  font-family: Georgia;
+#padding {
+  padding-left: 50px;
 }
 
-#logo-style {
-  font-size: 25px;
-  color: #fdfdfd;
-  font-family: Georgia;
+#tweeter-setting {
+  font-size: 50px;
+  color: #c2185b;
+  font-family: none;
+  font-weight: bold;
 }
 
-#submenu-style {
-  font-size: 18px;
-  color: #fdfdfd;
-  font-family: Georgia;
+@media screen and (max-width: 600px) {
+  #font-style {
+    font-size: 15px;
+    color: none;
+    font-family: Georgia;
+  }
+
+  #welcome {
+    font-size: 25px;
+    color: #3d3c3c;
+    font-family: Georgia;
+  }
+
+  #tweet-font-style {
+    font-size: 15px;
+    color: #3d3c3c;
+    font-family: Georgia;
+  }
+
+  #logo-style {
+    font-size: 25px;
+    color: #fdfdfd;
+    font-family: Georgia;
+  }
+
+  #submenu-style {
+    font-size: 15px;
+    color: #fdfdfd;
+    font-family: Georgia;
+  }
+
+  #image-size {
+    width: 50vw;
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+  #font-style {
+    font-size: 18px;
+    color: #3d3c3c;
+    font-family: Georgia;
+  }
+
+  #welcome {
+    font-size: 30px;
+    color: #3d3c3c;
+    font-family: Georgia;
+  }
+
+  #tweet-font-style {
+    font-size: 18px;
+    color: #3d3c3c;
+    font-family: Georgia;
+  }
+
+  #logo-style {
+    font-size: 25px;
+    color: #fdfdfd;
+    font-family: Georgia;
+  }
+
+  #submenu-style {
+    font-size: 20px;
+    color: #fdfdfd;
+    font-family: Georgia;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  #font-style {
+    font-size: 20px;
+    color: #3d3c3c;
+    font-family: Georgia;
+  }
+
+  #welcome {
+    font-size: 25px;
+    color: #3d3c3c;
+    font-family: Georgia;
+  }
+
+  #tweet-font-style {
+    font-size: 20px;
+    color: #3d3c3c;
+    font-family: Georgia;
+  }
+
+  #logo-style {
+    font-size: 40px;
+    color: #fdfdfd;
+    font-family: Georgia;
+  }
+
+  #submenu-style {
+    font-size: 22px;
+    color: #fdfdfd;
+    font-family: Georgia;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #font-style {
+    font-size: 20px;
+    color: #3d3c3c;
+    font-family: Georgia;
+  }
+
+  #submenu-style {
+    font-size: 25px;
+    color: #fdfdfd;
+    font-family: Georgia;
+  }
+
+  #welcome {
+    font-size: 25px;
+    color: #3d3c3c;
+    font-family: Georgia;
+  }
+
+  #tweet-font-style {
+    font-size: 20px;
+    color: #3d3c3c;
+    font-family: Georgia;
+  }
+
+  #logo-style {
+    font-size: 40px;
+    color: #fdfdfd;
+    font-family: Georgia;
+  }
 }
 

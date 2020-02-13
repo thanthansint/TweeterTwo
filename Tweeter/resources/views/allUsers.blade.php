@@ -21,18 +21,17 @@
                 <form action="/unfollowUsers" method="get">
                     @csrf
                 <input type="hidden" name="unfollowedUserId" value="{{$user->id}}">
-                <input class="btn pink darken-1" type="submit" value="Unfollow">
+                <input class="btn pink darken-1" id="border-style" type="submit" value="Unfollow">
                 </form>
-                {{-- @php print_r($user->id); @endphp --}}
             @else
                 <form action="/followUsers" method="post">
                     @csrf
                 <input type="hidden" name="followedUserId" value="{{$user->id}}">
-                <input class="btn pink darken-1" type="submit" value="Follow">
+                <input class="btn pink darken-1" id="border-style" type="submit" value="Follow">
                 </form>
             @endif
         @endforeach
         <br>
-        <a class="btn pink darken-1" href="tweetFeed" id="tab1">Back</a>
+        <a class="btn pink darken-1" id="border-style" href="tweetFeed">Back</a>
     </div>
 @endsection

@@ -5,8 +5,8 @@
             @csrf
             <input type="hidden" name="id" value="{{$userId}}">
             <p>Are you sure to delete?</p>
-            <button class="btn pink darken-1" type="submit" name ="yes" value="{{$userId}}">Yes</button>
-            <button class="btn pink darken-1" type="submit" name ="no" value="{{$userId}}">No</button>
+            <button class="btn pink darken-1" id="border-style" type="submit" name ="yes" value="{{$userId}}">Yes</button>
+            <button class="btn pink darken-1" id="border-style" type="submit" name ="no" value="{{$userId}}">No</button>
         </form>
     </div>
 @endsection

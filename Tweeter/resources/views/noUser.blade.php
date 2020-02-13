@@ -8,7 +8,7 @@
         <div class="row">
             <form action="/tweetFeed" method="get">
                 @csrf
-                <button class="btn-flat waves-effect waves-yellow grey-text text-darken-4" type="submit" value="">Back</button>
+                <button class="btn pink darken-1" id="border-style" type="submit" value="">Back</button>
             </form>
         </div>
 

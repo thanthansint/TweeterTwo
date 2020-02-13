@@ -129,24 +129,24 @@
 
 
         <nav>
-            <div class="nav-wrapper  pink darken-2">
+            <div class="nav-wrapper  pink darken-1">
                 <div class="container">
                 <a href="#" class="brand-logo center" id="logo-style">TWEETER</a>
                 <ul id="nav-mobile col s12" >
                         @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <li class="nav-item left">
+                            <a class="nav-link"  id="submenu-style" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <li class="nav-item right">
+                                <a class="nav-link" id="submenu-style" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                         @else
                             <div class="col s4 m4 l4 left">
                                 <li class="nav-item">
                                     <div>
-                                        <a  id="submenu-style" href="{{ route('logout') }}"
+                                        <a id="submenu-style" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}

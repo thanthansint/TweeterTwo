@@ -157,11 +157,19 @@ class TweetController extends Controller
         return view('commentForm', ['tweet'=>$request->tweetId, 'commentId'=>$request->commentId]);
     }
     public function editComment(Request $request){
-        $comment = \App\Comment::find($request->commentId);
-        $comment->content = $request->content;
-        $comment->save();
-        $result = \App\Tweet::all();
-        return view('tweetFeed',['tweets'=>$result]);
+        $validatedData = $request->validate([
+            'content' => 'required|max:250'
+        ]);
+        if ($request->content==null) {
+            $result = \App\Tweet::all();
+            return view('tweetFeed',['tweets'=>$result]);
+        } else {
+            $comment = \App\Comment::find($request->commentId);
+            $comment->content = $request->content;
+            $comment->save();
+            $result = \App\Tweet::all();
+            return view('tweetFeed',['tweets'=>$result]);
+        }
     }
     public function deleteComment(Request $request){
         \App\Comment::destroy($request->commentId);
