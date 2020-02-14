@@ -46,8 +46,9 @@
                 <button class="btn-flat waves-effect waves-purple grey-text text-darken-4" id="font-style" type="submit" value=""><strong>Create Tweet</strong></button>
                 </form>
             </div>
-            <div class="divider"></div>
         </div>
+        <div class="divider"></div>
+
         @guest
             <blockquote>Go Sign Up!</blockquote>
         @else
@@ -103,38 +104,58 @@
                         @endif
                     </div>
                     <div class="divider"></div>
-                    <div class="row s12 m12 l12 padding-left-right">
-                        <div class="col s4 m3 l3">
+                    <div class="row s12 m12 12 padding-left-right">
+                        <div class="col s8 m8 l6">
                             <form action="/saveLike" method="post">
                                 @csrf
-                                <div class="col s3 m2 l2 pull-s1 pull-m1 pull-l1">
+                                <div class="col s1 m1 l1 pull-s1 pull-m1 pull-l1">
                                     <br>
                                     <input type="hidden" name="tweetId" value="{{$tweet->id}}">
                                     <input type="hidden" name="userId" value="{{Auth::user()->id}}">
-                                    <button class="btn-tiny pink-text text-darken-5 light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite_border</i></strong></button>
+                                    <button class="btn-tiny blue-text text-darken-5 light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
                                 </div>
-                                <div class="col s1 m1 l1 push-s3 push-m2 push-l2">
+                                <div class="col s1 m1 l1 push-s1 push-m1 push-l1">
                                     <br>
                                     <label id="font-style">{{$count}}</label>
                                 </div>
                             </form>
                         </div>
-                        <div class="col s8 m9 l9">
-                            <form action="/saveComment" method="post">
-                                <div class="col s1 m1 l1 push-s7 push-m8 push-l8">
+                        {{-- ///////////// --}}
+                        <div class="col s4 m3 l3 right">
+                            <form action="/saveUnlike" method="post">
+                                @csrf
+                                <div class="col s2 m2 l2 pull-s1 pull-m1 pull-l1">
                                     <br>
-                                    <button class="btn-floating btn-medium waves-effect waves-light pink" id="border-style" type="submit" name="submit" value="{{$tweet->id}}"><i class="material-icons">add</i></button>
-                                </div>
-                                <div class="input-field col s7 m8 l8 pull-s1 pull-m1 pull-l1">
-                                    @csrf
                                     <input type="hidden" name="tweetId" value="{{$tweet->id}}">
                                     <input type="hidden" name="userId" value="{{Auth::user()->id}}">
-                                    <input type="text" name="comment" required autocomplete="comment">
-                                    <label>Comment</label>
+                                    <button class="btn-tiny black-text text-darken-5 light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
+                                </div>
+                                <div class="col s1 m1 l1 push-s2 push-m2 push-l2">
+                                    <br>
+                                    {{-- <label id="font-style">{{$count}}</label> --}}
                                 </div>
                             </form>
                         </div>
                     </div>
+
+
+                    <div class="row s12 m12 l12 padding-left-right">
+                        <form action="/saveComment" method="post">
+                            <div class="col s1 m2 l2 push-s10 push-m10 push-l10">
+                                <br>
+                                <button class="btn-floating btn-medium waves-effect waves-light pink" id="border-style" type="submit" name="submit" value="{{$tweet->id}}"><i class="material-icons">add</i></button>
+                            </div>
+                            <div class="input-field col s10 m10 l10 pull-s1 pull-m2 pull-l2">
+                                @csrf
+                                <input type="hidden" name="tweetId" value="{{$tweet->id}}">
+                                <input type="hidden" name="userId" value="{{Auth::user()->id}}">
+                                <input type="text" name="comment" required autocomplete="comment">
+                                <label>Comment</label>
+                            </div>
+                        </form>
+                    </div>
+
+
                     <div class="card-panel col s12 padding-left-right">
                         @if (sizeOf($comments)==0)
                             <p> No Comments!</p>

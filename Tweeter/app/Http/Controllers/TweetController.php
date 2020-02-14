@@ -132,6 +132,18 @@ class TweetController extends Controller
             }
         }
     }
+    public function saveUnlike(Request $request){
+        $likeUsers = \App\Like::where('user_id', Auth::user()->id)->where('tweet_id',$request->tweetId)->get();
+        if (sizeOf($likeUsers)>0) {
+            foreach ($likeUsers as $likeUser){
+                \App\Like::destroy($likeUser->id);
+            }
+        }
+        $result = \App\Tweet::all();
+        return view('tweetFeed', ['tweets'=>$result]);
+    }
+
+
     public function saveComment(Request $request){
         if (Auth::check()) {
             $comment = new \App\Comment;

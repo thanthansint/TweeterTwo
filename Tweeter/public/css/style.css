@@ -178,12 +178,12 @@
   }
 
   #welcome-image {
-    width: 80vw;
+    width: 50vw;
     opacity: 1;
   }
 
   .welcome-title {
-    font-size: 70px;
+    font-size: 50px;
     color: #ad1457;
     font-weight: bold;
   }
@@ -233,12 +233,12 @@
   }
 
   #welcome-image {
-    width: 100vw;
+    width: 60vw;
     opacity: 1;
   }
 
   .welcome-title {
-    font-size: 84px;
+    font-size: 70px;
     color: #ad1457;
     font-weight: bold;
   }

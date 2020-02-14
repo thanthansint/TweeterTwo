@@ -38,6 +38,8 @@ Route::post('/editTweetForm', 'TweetController@showEditForm');
 Route::post('/editTweet', 'TweetController@editTweet');
 
 Route::post('/saveLike', 'TweetController@saveLike');
+Route::post('/saveUnlike', 'TweetController@saveUnlike');
+
 Route::post('/saveComment', 'TweetController@saveComment');
 Route::post('/showComments', 'TweetController@showComments');
 Route::post('/commentForm', 'TweetController@commentForm');
@@ -48,5 +50,6 @@ Route::get('/tweetFeed/{id}', 'TweetController@showTweet');
 Route::get('/showAllUsers', 'TweetController@showAllUsers');
 Route::post('/followUsers', 'TweetController@followUsers');
 Route::get('/unfollowUsers', 'TweetController@unfollowUsers');
+
 
 ?>

@@ -32,6 +32,7 @@
                                 </form>
                             </div>
                             <div class="col s4">
+                                <br><br>
                                 <p>Already Following!</p>
                             </div>
                         @else
