@@ -27,7 +27,7 @@
   }
 
   #welcome {
-    font-size: 40px;
+    font-size: 20px;
     color: #c2185b;
     font-family: Georgia;
   }
@@ -50,9 +50,32 @@
     font-family: Georgia;
   }
 
+  .user-font {
+    font-size: 25px;
+    color: #c2185b;
+    font-family: Nunito;
+  }
+
+  .comment-user {
+    font-size: 15px;
+    color: #c2185b;
+    font-family: Nunito;
+  }
+
   #image-size {
     width: 50vw;
     opacity: 1;
+  }
+
+  #welcome-image {
+    width: 80vw;
+    opacity: 1;
+  }
+
+  .welcome-title {
+    font-size: 35px;
+    color: #ad1457;
+    font-weight: bold;
   }
 }
 
@@ -86,6 +109,29 @@
     color: #fdfdfd;
     font-family: Georgia;
   }
+
+  .user-font {
+    font-size: 30px;
+    color: #c2185b;
+    font-family: Nunito;
+  }
+
+  .comment-user {
+    font-size: 18px;
+    color: #c2185b;
+    font-family: Nunito;
+  }
+
+  #welcome-image {
+    width: 80vw;
+    opacity: 1;
+  }
+
+  .welcome-title {
+    font-size: 60px;
+    color: #ad1457;
+    font-weight: bold;
+  }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
@@ -118,6 +164,29 @@
     color: #fdfdfd;
     font-family: Georgia;
   }
+
+  .user-font {
+    font-size: 35px;
+    color: #c2185b;
+    font-family: Nunito;
+  }
+
+  .comment-user {
+    font-size: 20px;
+    color: #c2185b;
+    font-family: Nunito;
+  }
+
+  #welcome-image {
+    width: 80vw;
+    opacity: 1;
+  }
+
+  .welcome-title {
+    font-size: 70px;
+    color: #ad1457;
+    font-weight: bold;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -149,6 +218,33 @@
     font-size: 45px;
     color: #fdfdfd;
     font-family: Nunito;
+  }
+
+  .user-font {
+    font-size: 45px;
+    color: #c2185b;
+    font-family: Nunito;
+  }
+
+  .comment-user {
+    font-size: 20px;
+    color: #c2185b;
+    font-family: Nunito;
+  }
+
+  #welcome-image {
+    width: 100vw;
+    opacity: 1;
+  }
+
+  .welcome-title {
+    font-size: 84px;
+    color: #ad1457;
+    font-weight: bold;
+  }
+
+  .padding-left-right {
+    padding: 0 20px;
   }
 }
 

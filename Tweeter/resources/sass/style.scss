@@ -9,6 +9,11 @@
     border-radius: $b-radius;
     border : $b;
 }
+@mixin title($fs, $color, $fw){
+    font-size: $fs;
+    color: $color;
+    font-weight: $fw;
+}
 #margin{
     margin-top : 50px;
     margin-bottom: 50px;
@@ -29,7 +34,7 @@
         @include font-setting(15px, none, Georgia);
     }
     #welcome{
-        @include font-setting(40px, $pinky, Georgia);
+        @include font-setting(20px, $pinky, Georgia);
     }
     #tweet-font-style {
         @include font-setting(15px, $grey, Georgia);
@@ -40,9 +45,22 @@
     #submenu-style {
         @include font-setting(15px, $white, Georgia);
     }
+    .user-font {
+        @include font-setting(25px, $pinky, Nunito);
+    }
+    .comment-user{
+        @include font-setting(15px, $pinky, Nunito);
+    }
     #image-size{
         width: 50vw;
         opacity: 1;
+    }
+    #welcome-image {
+        width: 80vw;
+        opacity: 1;
+    }
+    .welcome-title{
+        @include title(35px, #ad1457, bold);
     }
 }
 @media screen and (min-width: 601px) and (max-width: 1023px) {
@@ -61,6 +79,19 @@
     #submenu-style {
         @include font-setting(20px, $white, Georgia);
     }
+    .user-font {
+        @include font-setting(30px, $pinky, Nunito);
+    }
+    .comment-user{
+        @include font-setting(18px, $pinky, Nunito);
+    }
+    #welcome-image {
+        width: 80vw;
+        opacity: 1;
+    }
+    .welcome-title{
+        @include title(60px, #ad1457, bold);
+    }
 }
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
     #font-style {
@@ -77,6 +108,19 @@
     }
     #submenu-style {
         @include font-setting(22px, $white, Georgia);
+    }
+    .user-font {
+        @include font-setting(35px, $pinky, Nunito);
+    }
+    .comment-user{
+        @include font-setting(20px, $pinky, Nunito);
+    }
+    #welcome-image {
+        width: 80vw;
+        opacity: 1;
+    }
+    .welcome-title{
+        @include title(70px, #ad1457, bold);
     }
 }
 @media screen and (min-width: 1200px) {
@@ -95,4 +139,21 @@
     #logo-style {
         @include font-setting(45px, $white, Nunito);
     }
+    .user-font {
+        @include font-setting(45px, $pinky, Nunito);
+    }
+    .comment-user{
+        @include font-setting(20px, $pinky, Nunito);
+    }
+    #welcome-image {
+        width: 100vw;
+        opacity: 1;
+    }
+    .welcome-title{
+        @include title(84px, #ad1457, bold);
+    }
+    .padding-left-right{
+        padding: 0 20px;
+    }
 }
+

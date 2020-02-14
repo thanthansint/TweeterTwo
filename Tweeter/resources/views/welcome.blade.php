@@ -8,12 +8,14 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                /* color: #636b6f; */
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -44,11 +46,11 @@
                 text-align: center;
             }
 
-            .title {
+            /* .title {
                 font-size: 84px;
                 color: #ad1457;
                 font-weight: bold;
-            }
+            } */
 
             .links > a {
                 color: #636b6f;
@@ -62,11 +64,13 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+                margin-top: 30px;
             }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        {{-- <div class="flex-center position-ref full-height"> --}}
+        <div class="flex-center position-ref full-height col s12">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -81,12 +85,12 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
+            <div class="content col s12">
+                <div class="welcome-title">
                    Welcome To TWEETER
                 </div>
                 <div>
-                    <img class="responsive-img" src="../image/birds-singing.jpg" alt="birds singing">
+                    <img id="welcome-image" class="responsive-img" src="../image/birds-singing.jpg" alt="birds singing">
                 </div>
             </div>
 
