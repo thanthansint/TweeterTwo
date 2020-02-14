@@ -7,6 +7,7 @@
             @csrf
             <div class="row input-field">
                 <i class="material-icons prefix">account_circle</i>
+                <label>Name</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"  autofocus required autocomplete="name"><br><br>
                     @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -16,6 +17,7 @@
             </div>
             <div class="row input-field">
                 <i class="material-icons prefix">mail_outline</i>
+                <label>Email</label>
                 <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" required autocomplete="email"><br><br>
                     @error('email')
                         <span class="invalid-feedback" role="alert">

@@ -79,7 +79,7 @@
                             @php
                                 $tweetUser = \App\User::find($tweet->user_id);
                             @endphp
-                            <p class="left-align user-font">{{$tweetUser->name}}</p>
+                            <p class="left-align user-font"><span>@</span>{{$tweetUser->name}}</p>
                             <p class="flow-text left-align" id="tweet-font-style">{{$tweet->content}}</p>
                             <p class="flow-text left-align" id="tweet-font-style">{{$tweet->created_at}}</p><br><br>
                         </div>
