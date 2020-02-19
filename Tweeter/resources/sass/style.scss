@@ -42,9 +42,6 @@
     #logo-style {
         @include font-setting(30px, $white, Georgia);
     }
-    #submenu-style {
-        @include font-setting(15px, $white, Georgia);
-    }
     .user-font {
         @include font-setting(25px, $pinky, Nunito);
     }
@@ -52,7 +49,7 @@
         @include font-setting(15px, $pinky, Nunito);
     }
     #image-size{
-        width: 50vw;
+        width:40vw;
         opacity: 1;
     }
     #welcome-image {
@@ -62,8 +59,12 @@
     .welcome-title{
         @include title(35px, #ad1457, bold);
     }
+    .center-color{
+        @include font-setting(15px, $red, Georgia);
+        padding-left: 31px;
+    }
 }
-@media screen and (min-width: 601px) and (max-width: 1023px) {
+@media screen and (min-width: 601px) and (max-width: 992px) {
     #font-style {
         @include font-setting(18px, $grey, Georgia);
     }
@@ -76,14 +77,15 @@
     #logo-style {
         @include font-setting(40px, $white, Georgia);
     }
-    #submenu-style {
-        @include font-setting(20px, $white, Georgia);
-    }
     .user-font {
         @include font-setting(30px, $pinky, Nunito);
     }
     .comment-user{
         @include font-setting(18px, $pinky, Nunito);
+    }
+    #image-size{
+        width:40vw;
+        opacity: 1;
     }
     #welcome-image {
         width: 80vw;
@@ -93,9 +95,9 @@
         @include title(60px, #ad1457, bold);
     }
 }
-@media screen and (min-width: 1024px) and (max-width: 1199px) {
+@media screen and (min-width: 993px) and (max-width: 1199px) {
     #font-style {
-        @include font-setting(20px, $grey, Georgia);
+        @include font-setting(16px, $grey, Georgia);
     }
     #welcome{
         @include font-setting(55px, $green, Georgia);
@@ -106,14 +108,15 @@
     #logo-style {
         @include font-setting(45px, $white, Georgia);
     }
-    #submenu-style {
-        @include font-setting(22px, $white, Georgia);
-    }
     .user-font {
         @include font-setting(35px, $pinky, Nunito);
     }
     .comment-user{
         @include font-setting(20px, $pinky, Nunito);
+    }
+    #image-size{
+        width:40vw;
+        opacity: 1;
     }
     #welcome-image {
         width: 50vw;
@@ -126,9 +129,6 @@
 @media screen and (min-width: 1200px) {
     #font-style {
         @include font-setting(20px, $grey, Georgia);
-    }
-    #submenu-style {
-        @include font-setting(25px, $white, Nunito);
     }
     #welcome{
         @include font-setting(80px, $blue, Nunito);
@@ -145,6 +145,10 @@
     .comment-user{
         @include font-setting(20px, $pinky, Nunito);
     }
+    #image-size{
+        width:40vw;
+        opacity: 1;
+    }
     #welcome-image {
         width: 60vw;
         opacity: 1;
@@ -155,5 +159,6 @@
     .padding-left-right{
         padding: 0 20px;
     }
+
 }
 

@@ -6,41 +6,41 @@
             <div class="col s12">
                 <img class="responsive-img" id="image-size" src="../image/single-bird.jpg" alt="bird">
             </div>
-            <div class="col s12 m6 l3">
+            <div class="col s12 m6 l4">
                 <form action="/showUserProfile" method="get">
                     @csrf
                     <button class="btn-flat waves-effect waves-purple grey-text text-darken-4" id="font-style" type="submit" value=""><strong>User's Profile</strong></button>
                 </form>
             </div>
 
-            <div class="col s12 m6 l3">
+            <div class="col s12 m6 l4">
                 <form action="/editUserProfileForm" method="post">
                     @csrf
                     <input type="hidden" name="userId" value="{{Auth::user()->id}}">
                     <button class="btn-flat waves-effect waves-purple grey-text text-darken-4" id="font-style" type="submit" value=""><strong>Edit Profile</strong></button>
                 </form>
             </div>
-            <div class="col s12 m6 l3">
+            <div class="col s12 m6 l4">
                 <form action="/deleteUserProfileForm" method="post">
                     @csrf
                     <input type="hidden" name="userId" value="{{Auth::user()->id}}">
                     <button class="btn-flat waves-effect waves-purple grey-text text-darken-4" id="font-style" type="submit" value=""><strong>Delete Profile</strong></button>
                 </form>
             </div>
-            <div class="col s12 m6 l3">
+            <div class="col s12 m6 l4">
                 <form action="/tweetFeed" method="get">
                     @csrf
                     <input type="hidden" name="userId" value="{{Auth::user()->id}}">
                     <button class="btn-flat waves-effect waves-purple grey-text text-darken-4" id="font-style" type="submit" value=""><strong>All Tweets</strong></button>
                 </form>
             </div>
-            <div class="col s12 m6 l3">
+            <div class="col s12 m6 l4">
                 <form action="/showAllUsers" method="get">
                     @csrf
                 <button class="btn-flat waves-effect waves-purple grey-text text-darken-4" id="font-style" type="submit" value=""><strong>Follow</strong></button>
                 </form>
             </div>
-            <div class="col s12 m6 l3">
+            <div class="col s12 m6 l4">
                 <form action="/createTweetForm" method="get">
                     @csrf
                 <button class="btn-flat waves-effect waves-purple grey-text text-darken-4" id="font-style" type="submit" value=""><strong>Create Tweet</strong></button>
@@ -132,7 +132,6 @@
                                 </div>
                                 <div class="col s1 m1 l1 push-s2 push-m2 push-l2">
                                     <br>
-                                    {{-- <label id="font-style">{{$count}}</label> --}}
                                 </div>
                             </form>
                         </div>
