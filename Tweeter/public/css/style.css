@@ -27,7 +27,7 @@
   }
 
   #welcome {
-    font-size: 20px;
+    font-size: 30px;
     color: #c2185b;
     font-family: Georgia;
   }
@@ -39,7 +39,7 @@
   }
 
   #logo-style {
-    font-size: 30px;
+    font-size: 25px;
     color: #fdfdfd;
     font-family: Georgia;
   }
@@ -57,13 +57,19 @@
   }
 
   #image-size {
-    width: 40vw;
+    width: 25vw;
     opacity: 1;
   }
 
   #welcome-image {
     width: 80vw;
     opacity: 1;
+  }
+
+  .welcome-header {
+    font-size: 22px;
+    color: #3d3c3c;
+    font-family: Nunito;
   }
 
   .welcome-title {
@@ -88,9 +94,15 @@
   }
 
   #welcome {
-    font-size: 45px;
+    font-size: 35px;
     color: #e3342f;
     font-family: Georgia;
+  }
+
+  .welcome-header {
+    font-size: 28px;
+    color: #3d3c3c;
+    font-family: Nunito;
   }
 
   #tweet-font-style {
@@ -118,7 +130,7 @@
   }
 
   #image-size {
-    width: 40vw;
+    width: 15vw;
     opacity: 1;
   }
 
@@ -142,9 +154,15 @@
   }
 
   #welcome {
-    font-size: 55px;
+    font-size: 50px;
     color: #38c172;
     font-family: Georgia;
+  }
+
+  .welcome-header {
+    font-size: 35px;
+    color: #3d3c3c;
+    font-family: Nunito;
   }
 
   #tweet-font-style {
@@ -172,7 +190,7 @@
   }
 
   #image-size {
-    width: 40vw;
+    width: 20vw;
     opacity: 1;
   }
 
@@ -196,8 +214,14 @@
   }
 
   #welcome {
-    font-size: 80px;
+    font-size: 60px;
     color: #3490dc;
+    font-family: Nunito;
+  }
+
+  .welcome-header {
+    font-size: 40px;
+    color: #3d3c3c;
     font-family: Nunito;
   }
 
@@ -226,7 +250,7 @@
   }
 
   #image-size {
-    width: 40vw;
+    width: 20vw;
     opacity: 1;
   }
 

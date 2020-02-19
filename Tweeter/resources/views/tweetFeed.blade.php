@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container  center-align">
+        <div class="welcome-header">
+            <p id="margin"><span> WELCOME</span><strong  id="welcome"> {{ Auth::user()->name }}</strong></p>
+        </div>
         <div class="row" id="margin" >
             <div class="col s12">
                 <img class="responsive-img" id="image-size" src="../image/single-bird.jpg" alt="bird">
@@ -52,7 +55,6 @@
         @guest
             <blockquote>Go Sign Up!</blockquote>
         @else
-            <h3 id="margin"><span> WELCOME</span><strong  id="welcome"> {{ Auth::user()->name }}</strong></h3>
             <div class="row">
                 <form class="col s12" id="margin" action="/searchTweet" method="post">
                     <div class="input-field col s8 m8 l8">
@@ -61,6 +63,7 @@
                         <input type="text" name="searchText" required autocomplete="searchText">
                         <label>By Author</label>
                     </div>
+                    <br>
                     <div class="col s4 m4 l4">
                         <button class="btn pink darken-1" id="border-style" type="submit" name="search" autofocus required autocomplete="search"><i class="material-icons"> search</i></button>
                     </div>
@@ -104,39 +107,28 @@
                         @endif
                     </div>
                     <div class="divider"></div>
-                    <div class="row s12 m12 12 padding-left-right">
-                        <div class="col s8 m8 l6">
+                    <div class="row s12 m12 12 ">
+                        <div class="col s6 m6 l6 center">
                             <form action="/saveLike" method="post">
                                 @csrf
-                                <div class="col s1 m1 l1 pull-s1 pull-m1 pull-l1">
                                     <br>
                                     <input type="hidden" name="tweetId" value="{{$tweet->id}}">
                                     <input type="hidden" name="userId" value="{{Auth::user()->id}}">
                                     <button class="btn-tiny blue-text text-darken-5 light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
-                                </div>
-                                <div class="col s1 m1 l1 push-s1 push-m1 push-l1">
-                                    <br>
                                     <label id="font-style">{{$count}}</label>
-                                </div>
                             </form>
                         </div>
                         {{-- ///////////// --}}
-                        <div class="col s4 m3 l3 right">
+                        <div class="col s6 m6 l6 center">
                             <form action="/saveUnlike" method="post">
                                 @csrf
-                                <div class="col s2 m2 l2 pull-s1 pull-m1 pull-l1">
                                     <br>
                                     <input type="hidden" name="tweetId" value="{{$tweet->id}}">
                                     <input type="hidden" name="userId" value="{{Auth::user()->id}}">
                                     <button class="btn-tiny black-text text-darken-5 light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
-                                </div>
-                                <div class="col s1 m1 l1 push-s2 push-m2 push-l2">
-                                    <br>
-                                </div>
                             </form>
                         </div>
                     </div>
-
 
                     <div class="row s12 m12 l12 padding-left-right">
                         <form action="/saveComment" method="post">
@@ -153,7 +145,6 @@
                             </div>
                         </form>
                     </div>
-
 
                     <div class="card-panel col s12 padding-left-right">
                         @if (sizeOf($comments)==0)

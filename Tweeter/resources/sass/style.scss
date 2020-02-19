@@ -34,13 +34,13 @@
         @include font-setting(15px, none, Georgia);
     }
     #welcome{
-        @include font-setting(20px, $pinky, Georgia);
+        @include font-setting(30px, $pinky, Georgia);
     }
     #tweet-font-style {
         @include font-setting(15px, $grey, Georgia);
     }
     #logo-style {
-        @include font-setting(30px, $white, Georgia);
+        @include font-setting(25px, $white, Georgia);
     }
     .user-font {
         @include font-setting(25px, $pinky, Nunito);
@@ -49,12 +49,15 @@
         @include font-setting(15px, $pinky, Nunito);
     }
     #image-size{
-        width:40vw;
+        width:25vw;
         opacity: 1;
     }
     #welcome-image {
         width: 80vw;
         opacity: 1;
+    }
+    .welcome-header{
+        @include font-setting(22px, $grey, Nunito);
     }
     .welcome-title{
         @include title(35px, #ad1457, bold);
@@ -69,7 +72,10 @@
         @include font-setting(18px, $grey, Georgia);
     }
     #welcome{
-        @include font-setting(45px, $red, Georgia);
+        @include font-setting(35px, $red, Georgia);
+    }
+    .welcome-header{
+        @include font-setting(28px, $grey, Nunito);
     }
     #tweet-font-style {
         @include font-setting(18px, $grey, Georgia);
@@ -84,7 +90,7 @@
         @include font-setting(18px, $pinky, Nunito);
     }
     #image-size{
-        width:40vw;
+        width:15vw;
         opacity: 1;
     }
     #welcome-image {
@@ -100,7 +106,10 @@
         @include font-setting(16px, $grey, Georgia);
     }
     #welcome{
-        @include font-setting(55px, $green, Georgia);
+        @include font-setting(50px, $green, Georgia);
+    }
+    .welcome-header{
+        @include font-setting(35px, $grey, Nunito);
     }
     #tweet-font-style {
         @include font-setting(20px, $grey, Georgia);
@@ -115,7 +124,7 @@
         @include font-setting(20px, $pinky, Nunito);
     }
     #image-size{
-        width:40vw;
+        width:20vw;
         opacity: 1;
     }
     #welcome-image {
@@ -131,7 +140,10 @@
         @include font-setting(20px, $grey, Georgia);
     }
     #welcome{
-        @include font-setting(80px, $blue, Nunito);
+        @include font-setting(60px, $blue, Nunito);
+    }
+    .welcome-header{
+        @include font-setting(40px, $grey, Nunito);
     }
     #tweet-font-style {
         @include font-setting(20px, $grey, Georgia);
@@ -146,7 +158,7 @@
         @include font-setting(20px, $pinky, Nunito);
     }
     #image-size{
-        width:40vw;
+        width:20vw;
         opacity: 1;
     }
     #welcome-image {

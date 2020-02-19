@@ -127,8 +127,9 @@ class TweetController extends Controller
                 $result = \App\Tweet::all();
                 return view('tweetFeed', ['tweets'=>$result]);
             } else {
-                $result = \App\Tweet::all();
-                return view('tweetFeed', ['tweets'=>$result]);
+                // $result = \App\Tweet::all();
+                // return view('tweetFeed', ['tweets'=>$result]);
+                return redirect('tweetFeed');
             }
         }
     }

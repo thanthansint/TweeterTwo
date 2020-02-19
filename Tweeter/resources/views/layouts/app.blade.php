@@ -18,6 +18,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
@@ -31,37 +32,37 @@
         <nav>
             <div class="nav-wrapper pink darken-2">
                 <div class="container">
-              <a href="#!" class="brand-logo" id="logo-style">Tweeter</a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-              <ul class="right hide-on-med-and-down">
-                @guest
-                <li>
-                    <a href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
-                @if (Route::has('register'))
-                    <li>
-                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
-                    </li>
-                @endif
-                @else
-                    <li>
-                        <div>
-                            <a class="center-color" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-                                    @csrf
-                            </form>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="../tweetFeed">{{ __('Tweets') }}</a>
-                    </li>
-                @endguest
-              </ul>
-            </div>
+                    <a href="#!" class="brand-logo" id="logo-style">Tweeter</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        @guest
+                        <li>
+                            <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @if (Route::has('register'))
+                            <li>
+                                <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endif
+                        @else
+                            <li>
+                                <div>
+                                    <a class="center-color" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                            @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="../tweetFeed">{{ __('Tweets') }}</a>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
             </div>
           </nav>
 
