@@ -73,20 +73,38 @@
                 @php
                     $count = sizeOf(\App\Tweet::find($tweet->id)->likes);
                     $comments = \App\Tweet::find($tweet->id)->comments;
+                    $like = sizeOf(\App\Like::where('tweet_id', $tweet->id)->where('user_id',Auth::user()->id)->get());
                 @endphp
 
                 <div class="card-panel lime lighten-5" id="margin" >
                     <br>
                     <div class="col s12 padding-left-right">
+
                         {{-- show the tweets here --}}
                         <div class="col s12">
                             @php
                                 $tweetUser = \App\User::find($tweet->user_id);
                             @endphp
+
                             <p class="left-align user-font"><span>@</span>{{$tweetUser->name}}</p>
-                            <p class="flow-text left-align" id="tweet-font-style">{{$tweet->content}}</p>
-                            <p class="flow-text left-align" id="tweet-font-style">{{$tweet->created_at}}</p><br><br>
+                            <p class="flow-text left-align" id="tweet-font-style">{{$tweet->created_at}}</p>
+                            <p class="flow-text left-align" id="tweet-font-style">{{$tweet->content}}</p><br><br>
+
+                            @php
+                                $date1 = strtotime(\Carbon\Carbon::parse($tweet->created_at));
+                                $date2 = strtotime(Carbon\Carbon::now());
+
+                                $diff = abs($date2 - $date1);
+                                $years = floor($diff / (365*60*60*24));
+                                $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                                $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+                                $hours = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24) / (60*60));
+                                $minutes = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60)/ 60);
+                                $seconds = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60 - $minutes*60));
+                            @endphp
+                            <p class='flow-text left-align' id='tweet-font-style'>Posted: {{$days}}d : {{$hours}}h : {{$minutes}}m : {{$seconds}}s ago</p><br>
                         </div>
+
                         @if (Auth::user()->id == $tweet->user_id)
                             <div class="row">
                                 <div class="col s6 m6 l6">
@@ -114,7 +132,11 @@
                                     <br>
                                     <input type="hidden" name="tweetId" value="{{$tweet->id}}">
                                     <input type="hidden" name="userId" value="{{Auth::user()->id}}">
-                                    <button class="btn-tiny blue-text text-darken-5 light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
+                                    @if ($like==0)
+                                        <button class="btn-tiny blue-text text-darken-5 light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
+                                    @elseif ($like==1)
+                                        <button class="btn-tiny red-text text-darken-5 light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
+                                    @endif
                                     <label id="font-style">{{$count}}</label>
                             </form>
                         </div>
@@ -125,7 +147,11 @@
                                     <br>
                                     <input type="hidden" name="tweetId" value="{{$tweet->id}}">
                                     <input type="hidden" name="userId" value="{{Auth::user()->id}}">
-                                    <button class="btn-tiny black-text text-darken-5 light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
+                                    @if ($like==0)
+                                        <button class="btn-tiny light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite_border</i></strong></button>
+                                    @else
+                                        <button class="btn-tiny light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
+                                    @endif
                             </form>
                         </div>
                     </div>
@@ -155,16 +181,16 @@
                                     @php
                                         $user = \App\User::find($comment->user_id);
                                     @endphp
-                                    <div class="col s12">
-                                        <div class=" row col s12 ">
-                                            <div class="col s6 center-align">
-                                                <span class="comment-user">{{$user->name}} : </span>
-                                            </div>
-                                            <div class="col s6 left-align">
-                                                <span id="font-style"> {{$comment->content}}</span>
-                                            </div>
+
+                                    <div class=" row col s12">
+                                        <div class="col s6 right-align">
+                                            <span class="comment-user">{{$user->name}} : </span>
+                                        </div>
+                                        <div class="col s6 left-align">
+                                            <span id="font-style"> {{$comment->content}}</span>
                                         </div>
                                     </div>
+
                                     <div class="row col s12">
                                             @if (Auth::user()->id == $comment->user_id)
                                                 <div class="col s6 center-align">

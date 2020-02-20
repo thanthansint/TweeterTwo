@@ -8,7 +8,7 @@ class Tweet extends Model
 {
     protected $table='tweet';
     protected $primaryKey = 'id';
-    //public $timestamp = false;
+
     public function user(){
         return $this->belongsTo('App\User');
     }

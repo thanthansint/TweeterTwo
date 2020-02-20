@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Symfony\Component\VarDumper\Caster\RedisCaster;
 
 class TweetController extends Controller
 {
@@ -23,16 +24,16 @@ class TweetController extends Controller
     }
     public function show() {
         if (Auth::check()) {
-           $result = \App\Tweet::all();
+           $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
             return view('tweetFeed',['tweets'=>$result]);
         } else {
             return view('tweetFeed');
         }
     }
-    public function showTweet($id){
-        $tweets =App\Tweet::find($id);
-        return view('profile', ['tweets' => $tweets]);
-    }
+    // public function showTweet($id){
+    //     $tweets =App\Tweet::find($id);
+    //     return view('profile', ['tweets' => $tweets]);
+    // }
     public function createTweetForm() {
         return view('createTweetForm');
     }
@@ -48,7 +49,7 @@ class TweetController extends Controller
             $tweet->user_id = Auth::user()->id;
             $tweet->save();
 
-           $result = \App\Tweet::all();
+            $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
             return view('tweetFeed',['tweets'=>$result]);
          } else {
             return view('tweetFeed');
@@ -62,7 +63,7 @@ class TweetController extends Controller
         $tweet = \App\Tweet::find($request->id);
         $tweet->content = $request->content;
         $tweet->save();
-        $result = \App\Tweet::all();
+        $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
         return view('tweetFeed',['tweets'=>$result]);
     }
     public function deleteTweetForm(Request $request){
@@ -86,14 +87,14 @@ class TweetController extends Controller
             }
             \App\Tweet::destroy($request->id);
         }
-        $result = \App\Tweet::all();
+        $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
         return view('tweetFeed', ['tweets'=>$result] );
     }
     public function showAllUsers(){
         if (Auth::check()) {
             $result = \App\User::all();
             $follows=\App\FollowRelationship::where('user_id',Auth::user()->id)->get();
-            return view('allUsers',['users'=>$result, 'follows'=>$follows]);
+            return view('followUsers',['users'=>$result, 'follows'=>$follows]);
         } else {
             return redirect('/home');
         }
@@ -124,13 +125,9 @@ class TweetController extends Controller
                 $like->user_id = Auth::user()->id;
                 $like->tweet_id = $request->tweetId;
                 $like->save();
-                $result = \App\Tweet::all();
-                return view('tweetFeed', ['tweets'=>$result]);
-            } else {
-                // $result = \App\Tweet::all();
-                // return view('tweetFeed', ['tweets'=>$result]);
-                return redirect('tweetFeed');
             }
+            $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
+            return view('tweetFeed', ['tweets'=>$result]);
         }
     }
     public function saveUnlike(Request $request){
@@ -140,7 +137,7 @@ class TweetController extends Controller
                 \App\Like::destroy($likeUser->id);
             }
         }
-        $result = \App\Tweet::all();
+        $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
         return view('tweetFeed', ['tweets'=>$result]);
     }
 
@@ -152,7 +149,7 @@ class TweetController extends Controller
             $comment->tweet_id = $request->tweetId;
             $comment->content = $request->comment;
             $comment->save();
-            $result = \App\Tweet::all();
+            $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
             return view('tweetFeed', ['tweets'=>$result]);
         } else {
             return view('tweetFeed');
@@ -176,19 +173,19 @@ class TweetController extends Controller
             'content' => 'required|max:250'
         ]);
         if ($request->content==null) {
-            $result = \App\Tweet::all();
+            $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
             return view('tweetFeed',['tweets'=>$result]);
         } else {
             $comment = \App\Comment::find($request->commentId);
             $comment->content = $request->content;
             $comment->save();
-            $result = \App\Tweet::all();
+            $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
             return view('tweetFeed',['tweets'=>$result]);
         }
     }
     public function deleteComment(Request $request){
         \App\Comment::destroy($request->commentId);
-        $result = \App\Tweet::all();
+        $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
         return view('tweetFeed', ['tweets'=>$result] );
     }
 }

@@ -4,7 +4,7 @@
 }
 
 #border-style {
-  border-radius: 12px;
+  border-radius: 11px;
   border: 1px solid #3d3c3c;
 }
 
@@ -45,7 +45,7 @@
   }
 
   .user-font {
-    font-size: 25px;
+    font-size: 20px;
     color: #c2185b;
     font-family: Nunito;
   }
@@ -118,7 +118,7 @@
   }
 
   .user-font {
-    font-size: 30px;
+    font-size: 25px;
     color: #c2185b;
     font-family: Nunito;
   }
@@ -178,7 +178,7 @@
   }
 
   .user-font {
-    font-size: 35px;
+    font-size: 25px;
     color: #c2185b;
     font-family: Nunito;
   }
@@ -238,7 +238,7 @@
   }
 
   .user-font {
-    font-size: 45px;
+    font-size: 30px;
     color: #c2185b;
     font-family: Nunito;
   }

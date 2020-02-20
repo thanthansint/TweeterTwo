@@ -19,7 +19,7 @@
     margin-bottom: 50px;
 }
 #border-style {
-   @include border-setting(12px, 1px solid $grey);
+   @include border-setting(11px, 1px solid $grey);
 }
 #padding{
     padding-left:50px;
@@ -43,7 +43,7 @@
         @include font-setting(25px, $white, Georgia);
     }
     .user-font {
-        @include font-setting(25px, $pinky, Nunito);
+        @include font-setting(20px, $pinky, Nunito);
     }
     .comment-user{
         @include font-setting(15px, $pinky, Nunito);
@@ -84,7 +84,7 @@
         @include font-setting(40px, $white, Georgia);
     }
     .user-font {
-        @include font-setting(30px, $pinky, Nunito);
+        @include font-setting(25px, $pinky, Nunito);
     }
     .comment-user{
         @include font-setting(18px, $pinky, Nunito);
@@ -118,7 +118,7 @@
         @include font-setting(45px, $white, Georgia);
     }
     .user-font {
-        @include font-setting(35px, $pinky, Nunito);
+        @include font-setting(25px, $pinky, Nunito);
     }
     .comment-user{
         @include font-setting(20px, $pinky, Nunito);
@@ -152,7 +152,7 @@
         @include font-setting(45px, $white, Nunito);
     }
     .user-font {
-        @include font-setting(45px, $pinky, Nunito);
+        @include font-setting(30px, $pinky, Nunito);
     }
     .comment-user{
         @include font-setting(20px, $pinky, Nunito);
