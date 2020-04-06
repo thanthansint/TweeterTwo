@@ -15,7 +15,7 @@ class TweetController extends Controller
         $user = \App\User::where('name', $request->searchText)->get();
         if (sizeOf($user) >0) {
             foreach ($user as $u){
-                $result = \App\Tweet::where('user_id', $u->id)->get();
+                $result = \App\Tweet::where('user_id', $u->id)->paginate(2);
             }
                 return view('tweetFeed',['tweets'=>$result]);
         } else {
@@ -24,7 +24,8 @@ class TweetController extends Controller
     }
     public function show() {
         if (Auth::check()) {
-           $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
+           //$result = \App\Tweet::orderBy('created_at', 'DESC')->get();
+           $result = \App\Tweet::orderBy('created_at', 'DESC')->paginate(2);
             return view('tweetFeed',['tweets'=>$result]);
         } else {
             return view('tweetFeed');
@@ -48,8 +49,8 @@ class TweetController extends Controller
             $tweet->content = $request->content;
             $tweet->user_id = Auth::user()->id;
             $tweet->save();
-
-            $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
+            $result = \App\Tweet::orderBy('created_at', 'DESC')->paginate(2);
+            // $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
             return view('tweetFeed',['tweets'=>$result]);
          } else {
             return view('tweetFeed');
@@ -63,7 +64,8 @@ class TweetController extends Controller
         $tweet = \App\Tweet::find($request->id);
         $tweet->content = $request->content;
         $tweet->save();
-        $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
+        $result = \App\Tweet::orderBy('created_at', 'DESC')->paginate(2);
+        // $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
         return view('tweetFeed',['tweets'=>$result]);
     }
     public function deleteTweetForm(Request $request){
@@ -87,12 +89,14 @@ class TweetController extends Controller
             }
             \App\Tweet::destroy($request->id);
         }
-        $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
+        $result = \App\Tweet::orderBy('created_at', 'DESC')->paginate(2);
+        // $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
         return view('tweetFeed', ['tweets'=>$result] );
     }
     public function showAllUsers(){
         if (Auth::check()) {
-            $result = \App\User::all();
+            ///////
+            $result = \App\User::paginate(2);
             $follows=\App\FollowRelationship::where('user_id',Auth::user()->id)->get();
             return view('followUsers',['users'=>$result, 'follows'=>$follows]);
         } else {
@@ -104,7 +108,8 @@ class TweetController extends Controller
         $follows->user_id = Auth::user()->id;
         $follows->followedUser_id = $request->followedUserId;
         $follows->save();
-        $result = \App\Tweet::all();
+        ////
+        $result = \App\Tweet::paginate(2);
         return view('tweetFeed', ['tweets'=>$result]);
     }
     public function unfollowUsers(Request $request){
@@ -112,7 +117,8 @@ class TweetController extends Controller
         foreach ($unfollowUser as $unfollow){
             \App\FollowRelationship::destroy($unfollow->id);
         }
-        $result = \App\Tweet::all();
+        ////////
+        $result = \App\Tweet::paginate(2);
         return view('tweetFeed', ['tweets'=>$result]);
     }
 
@@ -126,10 +132,41 @@ class TweetController extends Controller
                 $like->tweet_id = $request->tweetId;
                 $like->save();
             }
-            $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
+            $result = \App\Tweet::orderBy('created_at', 'DESC')->paginate(2);
+            // $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
             return view('tweetFeed', ['tweets'=>$result]);
         }
     }
+
+    public function likeCount(Request $request) {
+    return response()->json(['message'=> $request->tweetid]);
+        $find = \App\Like::where('user_id', Auth::user()->id)->where('tweet_id', $request->tweetid)->get();
+        if (Auth::check()) {
+            if (sizeOf($find)==0) {
+                $like = new \App\Like;
+                $like->user_id = Auth::user()->id;
+                $like->tweet_id = $request->tweetid;
+                $like->save();
+            }
+            return response()->json(['message'=> "Success like"]);
+        }else {
+            return response()->json(['error'=>"Error"]);
+    }
+    }
+    public function unlikeCount(Request $request){
+        $likeUsers = \App\Like::where('user_id', Auth::user()->id)->where('tweet_id',$request->tweetid)->get();
+        if (Auth::check()) {
+            if (sizeOf($likeUsers)>0) {
+                foreach ($likeUsers as $likeUser){
+                    \App\Like::destroy($likeUser->id);
+                }
+            }
+                return response()->json(['message'=> "Successfully Unlike"]);
+        }else {
+            return response()->json(['error'=>"Error"]);
+        }
+    }
+
     public function saveUnlike(Request $request){
         $likeUsers = \App\Like::where('user_id', Auth::user()->id)->where('tweet_id',$request->tweetId)->get();
         if (sizeOf($likeUsers)>0) {
@@ -137,10 +174,10 @@ class TweetController extends Controller
                 \App\Like::destroy($likeUser->id);
             }
         }
-        $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
+        $result = \App\Tweet::orderBy('created_at', 'DESC')->paginate(2);
+        // $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
         return view('tweetFeed', ['tweets'=>$result]);
     }
-
 
     public function saveComment(Request $request){
         if (Auth::check()) {
@@ -149,12 +186,29 @@ class TweetController extends Controller
             $comment->tweet_id = $request->tweetId;
             $comment->content = $request->comment;
             $comment->save();
-            $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
-            return view('tweetFeed', ['tweets'=>$result]);
+            // $result = \App\Tweet::orderBy('created_at', 'DESC')->paginate(2);
+            // $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
+            return redirect()->back();
+            //return view('tweetFeed', ['tweets'=>$result]);
         } else {
             return view('tweetFeed');
         }
     }
+
+    public function saveGif(Request $request){
+        if (Auth::check()) {
+            //error_log($request);
+            $gif = new \App\Gif;
+            $gif->user_id = Auth::user()->id;
+            $gif->tweet_id = $request->tweetid;
+            $gif->content = $request->gifcontent;
+            $gif->save();
+            return response()->json(['message'=> "Successfully Save GIF"]);
+        } else {
+            return response()->json(['error'=>"Error"]);
+        }
+    }
+
     public function showComments(Request $request){
         if (Auth::check()) {
             $comments = \App\Comment::where('tweet_id', $request->tweetId)->get();
@@ -166,26 +220,45 @@ class TweetController extends Controller
         }
     }
     public function commentForm(Request $request) {
-        return view('commentForm', ['tweet'=>$request->tweetId, 'commentId'=>$request->commentId]);
+        return view('commentForm', ['tweet'=>$request->tweetId, 'commentId'=>$request->commentId, 'url'=>$request->url]);
     }
     public function editComment(Request $request){
         $validatedData = $request->validate([
             'content' => 'required|max:250'
         ]);
         if ($request->content==null) {
-            $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
-            return view('tweetFeed',['tweets'=>$result]);
+            // $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
+            // return view('tweetFeed',['tweets'=>$result]);
+            return redirect($request->url);
         } else {
             $comment = \App\Comment::find($request->commentId);
             $comment->content = $request->content;
             $comment->save();
-            $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
-            return view('tweetFeed',['tweets'=>$result]);
+            // $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
+            //return view('tweetFeed',['tweets'=>$result]);
+            return redirect($request->url);
         }
     }
     public function deleteComment(Request $request){
         \App\Comment::destroy($request->commentId);
-        $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
-        return view('tweetFeed', ['tweets'=>$result] );
+        //$result = \App\Tweet::orderBy('created_at', 'DESC')->paginate(2);
+        // $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
+        //return view('tweetFeed', ['tweets'=>$result] );
+        return redirect($request->url);
+    }
+
+    public function deleteGif(Request $request){
+        if (Auth::check()) {
+            // error_log($request->gifcontent);
+            $gifs = \App\Gif::where('content', $request->gifcontent)->where('user_id', $request->userid)-> where('tweet_id', $request->tweetid)->get();
+            if (sizeOf($gifs)>0) {
+                foreach ($gifs as $gif){
+                    \App\Gif::destroy($gif->id);
+                }
+            }
+            return response()->json(['message'=> "Successfully Delete GIF"]);
+        } else {
+            return response()->json(['error'=>"Deleted Error"]);
+        }
     }
 }

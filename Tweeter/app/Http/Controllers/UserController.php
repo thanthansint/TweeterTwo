@@ -31,8 +31,8 @@ class UserController extends Controller
         $newuser->name = $request->name;
         $newuser->email = $request->email;
         $newuser->save();
-
-        $result = \App\Tweet::all();
+            ///////
+        $result = \App\Tweet::paginate(2);
         return view('tweetFeed',['tweets'=>$result]);
     }
     public function deleteUserProfileForm(Request $request) {
@@ -40,7 +40,7 @@ class UserController extends Controller
     }
     public function deleteUserProfile(Request $request){
         if (isset($request->yes)) {
-            $result = \App\Tweet::where('user_id', Auth::user()->id)->get();
+            $result = \App\Tweet::where('user_id', Auth::user()->id)->paginate(2);
             if (sizeOf($result)>0) {
                 foreach ($result as $r) {
                     \App\Tweet::destroy($r->id);
@@ -67,7 +67,8 @@ class UserController extends Controller
             \App\User::destroy(Auth::user()->id);
             return view('welcome');
         } else {
-            $result = \App\Tweet::all();
+            /////
+            $result = \App\Tweet::paginate(2);
             return view('tweetFeed',['tweets'=>$result]);
         }
     }

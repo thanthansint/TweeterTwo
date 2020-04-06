@@ -69,11 +69,14 @@
                     </div>
                 </form>
             </div>
+
+
             @foreach ($tweets as $tweet)
                 @php
                     $count = sizeOf(\App\Tweet::find($tweet->id)->likes);
                     $comments = \App\Tweet::find($tweet->id)->comments;
                     $like = sizeOf(\App\Like::where('tweet_id', $tweet->id)->where('user_id',Auth::user()->id)->get());
+                    // $username = \App\User::where('user_id',Auth::user()->id)->get();
                 @endphp
 
                 <div class="card-panel lime lighten-5" id="margin" >
@@ -127,7 +130,7 @@
                     <div class="divider"></div>
                     <div class="row s12 m12 12 ">
                         <div class="col s6 m6 l6 center">
-                            <form action="/saveLike" method="post">
+                            {{-- <form action="/saveLike" method="post">
                                 @csrf
                                     <br>
                                     <input type="hidden" name="tweetId" value="{{$tweet->id}}">
@@ -138,10 +141,11 @@
                                         <button class="btn-tiny red-text text-darken-5 light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
                                     @endif
                                     <label id="font-style">{{$count}}</label>
-                            </form>
+                            </form> --}}
+                        <Like v-bind:likes={{ $like }} v-bind:like-count={{ $count }} v-bind:userid={{ Auth::user()->id }} v-bind:tweetid={{ $tweet->id }} />
                         </div>
                         {{-- ///////////// --}}
-                        <div class="col s6 m6 l6 center">
+                        {{-- <div class="col s6 m6 l6 center">
                             <form action="/saveUnlike" method="post">
                                 @csrf
                                     <br>
@@ -153,11 +157,13 @@
                                         <button class="btn-tiny light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
                                     @endif
                             </form>
-                        </div>
+
+                        </div> --}}
                     </div>
 
                     <div class="row s12 m12 l12 padding-left-right">
-                        <form action="/saveComment" method="post">
+                        <form action="/saveComment" method="POST">
+                            {{-- {{method_field('POST')}} --}}
                             <div class="col s1 m2 l2 push-s10 push-m10 push-l10">
                                 <br>
                                 <button class="btn-floating btn-medium waves-effect waves-light pink" id="border-style" type="submit" name="submit" value="{{$tweet->id}}"><i class="material-icons">add</i></button>
@@ -194,11 +200,13 @@
                                     <div class="row col s12">
                                             @if (Auth::user()->id == $comment->user_id)
                                                 <div class="col s6 center-align">
-                                                    <form action="/commentForm" method="post">
+                                                    <form action="/commentForm" method="POST">
                                                         @csrf
                                                         <input type="hidden" name="tweetId" value="{{$comment->tweet_id}}">
                                                         <input type="hidden" name="userId" value="{{Auth::user()->id}}">
+                                                        <input type="hidden" name="url" value="{{url()->full()}}">
                                                         <button class="btn pink darken-1" id="border-style" type="submit" name="commentId" value="{{$comment->id}}">Edit</button>
+
                                                     </form>
                                                 </div>
                                                 <div class="col s6 center-align">
@@ -206,6 +214,7 @@
                                                         @csrf
                                                         <input type="hidden" name="tweetId" value="{{$comment->tweet_id}}">
                                                         <input type="hidden" name="userId" value="{{Auth::user()->id}}">
+                                                        <input type="hidden" name="url" value="{{url()->full()}}">
                                                         <button class="btn pink darken-1" id="border-style" type="submit" name="commentId" value="{{$comment->id}}">Delete</button>
                                                     </form>
                                                 </div>
@@ -215,8 +224,22 @@
                                 @endforeach
                         @endif
                     </div>
+
+                    {{-- GIF search --}}
+                    <div class="col s12">
+                        @php
+                            $gifUser = \App\User::find(Auth::user()->id);
+                        @endphp
+                        <Gif username="{{ $gifUser->name }}" v-bind:userid={{ Auth::user()->id }} v-bind:tweetid={{ $tweet->id }} />
+                    </div>
                 </div>
             @endforeach
+
+            {{-- pagination links --}}
+            <div>
+                {{ $tweets->links() }}
+            </div>
+            {{-- //// --}}
         @endguest
     </div>
 @endsection

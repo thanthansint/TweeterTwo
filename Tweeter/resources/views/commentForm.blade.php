@@ -7,6 +7,11 @@
             <input type="hidden" name="tweetId" value="{{$tweet}}">
             <input type="hidden" name="userId" value="{{Auth::user()->id}}">
             <input type="hidden" name="commentId" value="{{$commentId}}">
+            {{-- //// --}}
+            <input type="hidden" name="url" value="{{$url}}">
+            {{-- <input type="hidden" name="url" value="URL::previous())"> --}}
+            {{-- {!! form::hidden('redirects_to', URL::previous()) !!} --}}
+            {{-- //// --}}
             <label>Comment</label>
             <input type="text" class="form-control @error('content') is-invalid @enderror" name="content" value="" required autocomplete="content">
             @error('content')

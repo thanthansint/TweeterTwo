@@ -37,8 +37,8 @@ Route::post('/deleteTweet', 'TweetController@deleteTweet');
 Route::post('/editTweetForm', 'TweetController@showEditForm');
 Route::post('/editTweet', 'TweetController@editTweet');
 
-Route::post('/saveLike', 'TweetController@saveLike');
-Route::post('/saveUnlike', 'TweetController@saveUnlike');
+// Route::post('/saveLike', 'TweetController@saveLike');
+// Route::post('/saveUnlike', 'TweetController@saveUnlike');
 
 Route::post('/saveComment', 'TweetController@saveComment');
 Route::post('/showComments', 'TweetController@showComments');
@@ -51,5 +51,8 @@ Route::get('/showAllUsers', 'TweetController@showAllUsers');
 Route::post('/followUsers', 'TweetController@followUsers');
 Route::get('/unfollowUsers', 'TweetController@unfollowUsers');
 
-
+Route::post('/likeCount', 'TweetController@likeCount');
+Route::post('/unlikeCount', 'TweetController@unlikeCount');
+Route::post('/saveGif', 'TweetController@saveGif');
+Route::post('/deleteGif', 'TweetController@deleteGif');
 ?>
