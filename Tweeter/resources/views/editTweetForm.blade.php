@@ -12,6 +12,8 @@
                 </span>
             @enderror
             <input type="hidden" name="id" value="{{$tweet->id}}">
+            {{-- //////// --}}
+            <input type="hidden" name="url" value="{{$url}}">
             <input class="btn pink darken-1" id="border-style" type="submit" name="edit" value="Edit">
         </form>
         <br>

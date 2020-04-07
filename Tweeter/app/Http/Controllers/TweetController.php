@@ -57,20 +57,21 @@ class TweetController extends Controller
         }
     }
     public function showEditForm(Request $request){
-        $tweet = \App\Tweet::find($request->id);
-        return view('editTweetForm', ['tweet'=>$tweet]);
+        $tweet = \App\Tweet::find($request->id);        //////
+        return view('editTweetForm', ['tweet'=>$tweet, 'url'=>$request->url]);
     }
     public function editTweet(Request $request){
         $tweet = \App\Tweet::find($request->id);
         $tweet->content = $request->content;
         $tweet->save();
-        $result = \App\Tweet::orderBy('created_at', 'DESC')->paginate(2);
+        //$result = \App\Tweet::orderBy('created_at', 'DESC')->paginate(2);
         // $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
-        return view('tweetFeed',['tweets'=>$result]);
+        //return view('tweetFeed',['tweets'=>$result]);
+        return redirect($request->url);
     }
     public function deleteTweetForm(Request $request){
         $tweet = \App\Tweet::find($request->id);
-        return view('deleteTweetForm', ['tweet'=>$tweet]);
+        return view('deleteTweetForm', ['tweet'=>$tweet, 'url'=>$request->url]);
     }
     public function deleteTweet(Request $request){
         if (isset($request->yes)) {
@@ -89,9 +90,11 @@ class TweetController extends Controller
             }
             \App\Tweet::destroy($request->id);
         }
-        $result = \App\Tweet::orderBy('created_at', 'DESC')->paginate(2);
+        //$result = \App\Tweet::orderBy('created_at', 'DESC')->paginate(2);
         // $result = \App\Tweet::orderBy('created_at', 'DESC')->get();
-        return view('tweetFeed', ['tweets'=>$result] );
+        //return view('tweetFeed', ['tweets'=>$result] );
+        ///////
+        return redirect($request->url);
     }
     public function showAllUsers(){
         if (Auth::check()) {

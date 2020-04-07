@@ -4,6 +4,7 @@
     <form action="/deleteTweet" method="post">
         @csrf
         <input type="hidden" name="id" value="{{$tweet->id}}">
+        <input type="hidden" name="url" value="{{$url}}">{{--////////// --}}
         <p id="font-style">Are you sure to delete?</p>
         <button class="btn pink darken-1" id="border-style" type="submit" name ="yes" value="{{$tweet->id}}">Yes</button>
         <button class="btn pink darken-1" id="border-style" type="submit" name ="no" value="{{$tweet->id}}">No</button>

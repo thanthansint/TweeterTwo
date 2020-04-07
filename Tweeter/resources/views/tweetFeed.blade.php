@@ -114,6 +114,8 @@
                                     <form action="/editTweetForm" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$tweet->id}}">
+                                        {{-- /////// --}}
+                                        <input type="hidden" name="url" value="{{url()->full()}}">
                                         <button class="btn-small pink darken-1" id="border-style" type="submit" value="{{$tweet->id}}">Edit</button><br><br>
                                     </form>
                                 </div>
@@ -121,6 +123,8 @@
                                     <form action="/deleteTweetForm" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$tweet->id}}">
+                                        {{-- //////// --}}
+                                        <input type="hidden" name="url" value="{{url()->full()}}">
                                         <button class="btn-small pink darken-1" id="border-style" type="submit" value="{{$tweet->id}}">Delete</button>
                                     </form>
                                 </div>
