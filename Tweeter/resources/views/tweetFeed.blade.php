@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container  center-align">
-        <div class="welcome-header">
-            <p id="margin"><span> WELCOME</span><strong  id="welcome"> {{ Auth::user()->name }}</strong></p>
+        <div class="welcome-header" id="margin">
+            <span >WELCOME</span><span id="welcome"> <strong> {{ Auth::user()->name }}</strong></span>
         </div>
         <div class="row" id="margin" >
             <div class="col s12">
@@ -241,7 +241,9 @@
 
             {{-- pagination links --}}
             <div>
+                <nav>
                 {{ $tweets->links() }}
+                </nav>
             </div>
             {{-- //// --}}
         @endguest

@@ -15,13 +15,7 @@ const app = new Vue({
     components: {
         Like,
         Gif
-    },
-    // data: {
-    //     title: "Vue.js - The UNIX and Linux Forums",
-    //     desc: "My Vue.js - The UNIX and Linux Forums",
-    //     keywords: "My (Obsolete) Keywords"
-    //   }
-
+    }
 });
 
 

@@ -15,12 +15,12 @@
     color: $color;
     font-weight: $fw;
 }
-nav{
-    margin-top: 20px !important;
-    margin-bottom: 20px !important;
-    background-color: white !important;
-    color: #c2185b !important;
-}
+// div > nav{
+//     margin-top: 20px !important;
+//     margin-bottom: 20px !important;
+//     background-color: white !important;
+//     color: #c2185b !important;
+// }
 // #margin{
 //     margin-top : 55px;
 //     margin-bottom: 50px;
@@ -38,7 +38,7 @@ nav{
 
 /////
 #margin{
-    margin-top : 65px;
+    padding-top : 200px;
     margin-bottom: 50px;
 }
 #font-style {
@@ -184,46 +184,3 @@ nav{
         @include title(50px, #ad1457, bold);
     }
 }
-@media screen and (min-width: 1200px) {
-    // #margin{
-    //     margin-top : 65px;
-    //     margin-bottom: 50px;
-    // }
-    // #font-style {
-    //     @include font-setting(20px, $grey, Georgia);
-    // }
-    // #welcome{
-    //     @include font-setting(60px, $blue, Nunito);
-    // }
-    // .welcome-header{
-    //     @include font-setting(40px, $grey, Nunito);
-    // }
-    // #tweet-font-style {
-    //     @include font-setting(20px, $grey, Georgia);
-    // }
-    // #logo-style {
-    //     @include font-setting(45px, $white, Nunito);
-    // }
-    // .user-font {
-    //     @include font-setting(30px, $pinky, Nunito);
-    // }
-    // .comment-user{
-    //     @include font-setting(20px, $pinky, Nunito);
-    // }
-    // #image-size{
-    //     width:20vw;
-    //     opacity: 1;
-    // }
-    // #welcome-image {
-    //     width: 60vw;
-    //     opacity: 1;
-    // }
-    // .welcome-title{
-    //     @include title(70px, #ad1457, bold);
-    // }
-    // .padding-left-right{
-    //     padding: 0 20px;
-    // }
-
-}
-

@@ -2093,6 +2093,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -6745,7 +6781,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n#outer-frame {\n  background: #eeeced;\n}\n#bac-frame {\n  position: relative;\n  top: 7vh;\n  left: 0.3vw;\n  background: #c2185b;\n}\n#login {\n  position: relative;\n  top: 1vh;\n  left: 2vw;\n}\n#welcome {\n  position: relative;\n  top: 2vh;\n  left: 2vw;\n  width: 70vw;\n  background: white;\n  padding-top: 10px;\n}\n#background-image {\n  position: relative;\n  top: -1vh;\n  left: 2vw;\n  width: 70vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#main-body {\n  position: relative;\n  top: 7vh;\n  width: 72vw;\n  border: 3px solid #c2185b;\n}\n#link-frame {\n  padding-top: 20px;\n}\n#link {\n  font-size: 15px;\n}\n#about {\n  position: relative;\n  top: 2vh;\n  left: 2vw;\n  width: 66vw;\n}\n#features {\n  position: relative;\n  top: 2vh;\n  left: 2vw;\n  width: 66vw;\n}\n#benefits {\n  position: relative;\n  top: 2vh;\n  left: 2vw;\n  width: 66vw;\n  padding-bottom: 15px;\n}\n#tweeter-text1, #tweeter-text2, #tweeter-text3 {\n  padding: 30px 0;\n  font-size: 25px;\n}\n.p2 {\n  padding-left: 40px;\n}\n.p3 {\n  padding-left: 55px;\n}\n#about-text1, #about-text2, #about-text3 {\n  padding: 5px;\n  font-size: 18px;\n}\n.marketing {\n  width: 70vw;\n  padding-bottom: 15px;\n}\n.likeShare {\n  width: 70vw;\n  padding-bottom: 30px;\n}\n.marketing-size {\n  width: 50vw;\n  margin-left: 4vw;\n  margin-top: 5vw;\n}", ""]);
+exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n#outer-frame {\n  width: 100%;\n  height: auto;\n  background: #eeeced;\n}\n#bac-frame {\n  position: relative;\n  top: 8vh;\n  background: #c2185b;\n}\n#login {\n  position: relative;\n  top: 1vh;\n  left: 2vw;\n}\n#welcome {\n  position: relative;\n  top: 1.8vh;\n  background: white;\n  padding-top: 10px;\n  z-index: 3;\n}\n#background-image {\n  position: relative;\n  top: -2vh;\n  width: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n#main-body {\n  position: relative;\n  top: 7vh;\n  border: 3px solid #c2185b;\n}\n.main-width {\n  width: 100%;\n}\n#link-frame {\n  padding-top: 50px;\n  padding-bottom: 50px;\n}\n#link {\n  font-size: 25px;\n}\n.layer {\n  margin: 15vh 8vw;\n}\n.layer1, .layer2, .layer3 {\n  background-color: pink;\n  width: 45vw;\n  height: 25vh;\n  position: relative;\n  top: 2vh;\n  left: 1vw;\n}\n.la1 {\n  background-color: pink;\n  position: relative;\n  top: 2vh;\n  left: 1vw;\n}\n.la2 {\n  background-color: #00eaff;\n  position: relative;\n  top: 2.3vh;\n  left: 1.3vw;\n}\n.la3 {\n  background-color: #c0f7a7;\n  position: relative;\n  top: 2.3vh;\n  left: 1.3vw;\n}\n#about, #features, #benefits {\n  position: relative;\n  top: 2vh;\n  width: 66vw;\n}\n#tweeter-text1, #tweeter-text2, #tweeter-text3 {\n  padding-bottom: 30px;\n  font-size: 25px;\n  margin: 8vh 0;\n}\n.text1-valign, .text2-valign, .text3-valign {\n  position: absolute;\n  top: 10vh;\n  left: 28vw;\n}\n#about-text1, #about-text2, #about-text3 {\n  width: 45%;\n  font-size: 18px;\n  margin-top: 15vh;\n  margin-bottom: 50px;\n  margin-left: 2vw;\n}\n.marketing {\n  margin-top: 18vh;\n  margin-bottom: 10px;\n  margin-left: 7vw;\n}\n.marketing-size {\n  width: 100%;\n  margin-top: 5vh;\n  margin-left: 7vw;\n}\n.likeShare {\n  margin-top: 20vh;\n  margin-bottom: 15px;\n  margin-left: 7vw;\n}\n.likeshare-size {\n  width: 100%;\n  margin-top: 5vh;\n  margin-left: 7vw;\n}\n.connect {\n  margin-top: 15vh;\n  margin-bottom: 15px;\n  margin-left: 7vw;\n}\n.connecting-size {\n  width: 100%;\n  margin-top: 5vh;\n  margin-left: 7vw;\n}\n.b1, .b2, .b3 {\n  background-color: none;\n}\n@media screen and (max-width: 600px) {\n.main-width {\n    width: 90%;\n    margin-left: 5vw;\n}\n.b1 {\n    background-color: #f5c0d5;\n}\n.b2 {\n    background-color: #caddf3;\n}\n.b3 {\n    background-color: #d8f5a8;\n}\n.text1-valign, .text2-valign, .text3-valign {\n    position: relative;\n    top: 5vh;\n    left: 2vw;\n}\n#tweeter-text1, #tweeter-text2, #tweeter-text3 {\n    font-size: 15px;\n    padding-bottom: 30px;\n}\n#about-text1, #about-text2, #about-text3 {\n    width: 100%;\n    font-size: 15px;\n    margin-top: 10vh;\n    margin-left: 6vw;\n}\n#link {\n    font-size: 15px;\n}\n.marketing {\n    margin-top: 18vh;\n    margin-bottom: 5vh;\n    margin-left: 5vw;\n    margin-right: 5vw;\n}\n.marketing-size {\n    width: 100%;\n    margin-left: 6vw;\n}\n.likeShare {\n    margin-top: 20vh;\n    margin-bottom: 15px;\n    margin-left: 5vw;\n    margin-right: 5vw;\n}\n.likeshare-size {\n    width: 100%;\n    margin-left: 6vw;\n}\n.connect {\n    margin-top: 15vh;\n    margin-bottom: 15px;\n    margin-left: 5vw;\n    margin-right: 5vw;\n}\n.connecting-size {\n    width: 100%;\n    margin-left: 6vw;\n}\n}\n@media screen and (min-width: 601px) and (max-width: 992px) {\n.main-width {\n    width: 90%;\n    margin-left: 5vw;\n}\n.b1 {\n    background-color: #f5c0d5;\n}\n.b2 {\n    background-color: #caddf3;\n}\n.b3 {\n    background-color: #d8f5a8;\n}\n.text1-valign, .text2-valign, .text3-valign {\n    position: relative;\n    top: 5vh;\n    left: 2vw;\n}\n#tweeter-text1, #tweeter-text2, #tweeter-text3 {\n    padding-bottom: 30px;\n    font-size: 25px;\n    margin: 8vh 0;\n}\n#link {\n    font-size: 20px;\n}\n#about-text1, #about-text2, #about-text3 {\n    width: 100%;\n    font-size: 15px;\n    margin-top: 10vh;\n    margin-left: 6vw;\n}\n.marketing, .likeShare, .connect {\n    margin-top: 10vh;\n    margin-bottom: 10px;\n    margin-left: 5vw;\n    margin-right: 5vw;\n}\n.marketing-size, .likeshare-size, .connecting-size {\n    width: 100%;\n    margin-left: 25vw;\n    margin-bottom: 10vh;\n}\n}\n@media screen and (min-width: 993px) and (max-width: 1199px) {\n.main-width {\n    width: 100%;\n}\n.b1, .b2, .b3 {\n    background-color: none;\n}\n.layer {\n    margin-left: 15vw;\n    margin-top: 10vh;\n    margin-bottom: 10vh;\n}\n.layer1, .layer2, .layer3 {\n    background-color: pink;\n    width: 35vw;\n    height: 15vh;\n    position: relative;\n    top: 1vh;\n    left: 1.5vw;\n}\n.la1 {\n    background-color: pink;\n    position: relative;\n    top: 1vh;\n    left: 1vw;\n}\n.la2 {\n    background-color: #00eaff;\n    position: relative;\n    top: 1.2vh;\n    left: 1.5vw;\n}\n.la3 {\n    background-color: #c0f7a7;\n    position: relative;\n    top: 1.2vh;\n    left: 1.5vw;\n}\n#about, #features, #benefits {\n    position: relative;\n    top: 2vh;\n    width: 66vw;\n}\n#tweeter-text1, #tweeter-text2, #tweeter-text3 {\n    padding: 30px;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 2vh 0;\n}\n.text1-valign, .text2-valign, .text3-valign {\n    position: absolute;\n    top: 5vh;\n    left: 27vw;\n}\n#link-frame {\n    padding-top: 50px;\n}\n#link {\n    font-size: 25px;\n}\n#about-text1, #about-text2, #about-text3 {\n    width: 30vw;\n    font-size: 15px;\n    margin-top: 10vh;\n    margin-bottom: 10vh;\n}\n.marketing {\n    margin-top: 10vh;\n}\n.marketing-size {\n    width: 100%;\n    margin-top: 5vh;\n    margin-left: 6vw;\n}\n.likeShare {\n    margin-top: 20vh;\n    margin-bottom: 15px;\n}\n.likeshare-size, .connecting-size {\n    width: 100%;\n    margin-left: 6vw;\n}\n.connect {\n    margin-top: 15vh;\n    margin-bottom: 15px;\n}\n}", ""]);
 
 // exports
 
@@ -6764,7 +6800,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.footer[data-v-61a7c374] {\n        position: relative;\n        top: 2vh;\n        height : 15vh;\n        font-size: 20px;\n         text-align: center;\n        background-color: #c2185b;\n}\ndiv.footer[data-v-61a7c374] {\n    text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.footer[data-v-61a7c374] {\n    position: relative;\n    top: 0;\n    height : 15vh;\n    font-size: 20px;\n    background-color: #c2185b;\n    /* margin-top: 2vh; */\n}\n.vertical[data-v-61a7c374]{\n    position: absolute;\n    top: 5vh;\n    left: 25vw;\n}\n", ""]);
 
 // exports
 
@@ -38371,11 +38407,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "footer white-text center-align container" },
-      [_c("p", [_vm._v("Copyright: 2010")])]
-    )
+    return _c("div", { staticClass: "footer white-text" }, [
+      _c("p", { staticClass: "vertical" }, [_vm._v("Copyright: 2010")])
+    ])
   }
 ]
 render._withStripped = true
@@ -38519,10 +38553,7 @@ var staticRenderFns = [
       [
         _c(
           "div",
-          {
-            staticClass: "container col s12 m12 l12",
-            attrs: { id: "bac-frame" }
-          },
+          { staticClass: " col s12 m12 l12", attrs: { id: "bac-frame" } },
           [
             _c(
               "p",
@@ -38544,199 +38575,304 @@ var staticRenderFns = [
           ]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "container", attrs: { id: "main-body" } }, [
+        _c("div", { staticClass: "main-width", attrs: { id: "main-body" } }, [
           _c(
             "div",
-            { staticClass: "row col s12 m6 l4", attrs: { id: "link-frame" } },
+            { staticClass: "row col l12", attrs: { id: "link-frame" } },
             [
-              _c("div", { staticClass: "btn-flat " }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "black-text text-darken-3",
-                    attrs: { href: "#about", id: "link" }
-                  },
-                  [_vm._v("What is this?")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "btn-flat " }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "black-text text-darken-3",
-                    attrs: { href: "#features", id: "link" }
-                  },
-                  [_vm._v("Features")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "btn-flat " }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "black-text text-darken-3",
-                    attrs: { href: "#benefits", id: "link" }
-                  },
-                  [_vm._v("Benefits")]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row col s12 m12 l12", attrs: { id: "about" } },
-            [
-              _c(
-                "div",
-                { staticClass: "black-text", attrs: { id: "tweeter-text1" } },
-                [_c("p", [_vm._v("What is Tweeter?")])]
-              ),
-              _vm._v(" "),
               _c(
                 "div",
                 {
-                  staticClass: "grey-text text-darken-4",
-                  attrs: { id: "about-text1" }
+                  staticClass:
+                    "btn-floating pink darken-2 pulse col s12 m4 l4 center-align"
                 },
                 [
-                  _c("ul", [
-                    _c("li", { attrs: { id: "fact1" } }, [
-                      _vm._v("* a social networking website")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { attrs: { id: "fact2" } }, [
-                      _vm._v("* users can share posts called tweets")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { attrs: { id: "fact3" } }, [
-                      _vm._v(
-                        "* can post comments to others tweets and retweet them"
-                      )
-                    ])
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "marketing" }, [
-                _c("img", {
-                  staticClass: "responsive-img marketing-size",
-                  attrs: {
-                    src: "/image/marketing.png",
-                    alt: "a group of people using social network like twitter"
-                  }
-                })
-              ])
-            ]
-          ),
-          _c("br"),
-          _c("br"),
-          _vm._v(" "),
-          _c("div", { staticClass: "divider" }),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row col s12 m12 l12", attrs: { id: "features" } },
-            [
-              _c(
-                "div",
-                { staticClass: "black-text", attrs: { id: "tweeter-text2" } },
-                [
-                  _c("p", { staticClass: "p2" }, [
-                    _vm._v("What can you do here?")
-                  ])
+                  _c(
+                    "a",
+                    {
+                      staticClass: "white-text text-darken-3",
+                      attrs: {
+                        href: "#about",
+                        id: "link",
+                        "data-out-effect": "fadeOut",
+                        "data-out-shuffle": "true"
+                      }
+                    },
+                    [_vm._v("What is this?")]
+                  )
                 ]
               ),
               _vm._v(" "),
               _c(
                 "div",
                 {
-                  staticClass: "grey-text text-darken-4",
-                  attrs: { id: "about-text2" }
+                  staticClass:
+                    "btn-floating pink darken-2 pulse col s12 m4 l4 center-align"
                 },
                 [
-                  _c("ul", [
-                    _c("li", { attrs: { id: "fact4" } }, [
-                      _vm._v("* Tweeter is user-friendly and open to everyone")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { attrs: { id: "fact5" } }, [
-                      _vm._v(
-                        "* Even the least technical-minded people can sign up and begin posting on Tweeter"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { attrs: { id: "fact6" } }, [
-                      _vm._v(
-                        "* a way to keep in touch or reconnect with long-lost friends"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { attrs: { id: "fact7" } }, [
-                      _vm._v(
-                        "* Tweeter makes it simple to share text messages, status posts and feelings on Tweeter"
-                      )
-                    ])
-                  ])
+                  _c(
+                    "a",
+                    {
+                      staticClass: "white-text text-darken-3",
+                      attrs: { href: "#features", id: "link" }
+                    },
+                    [_vm._v("Features")]
+                  )
                 ]
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "likeShare" }, [
-                _c("img", {
-                  staticClass: "responsive-img marketing-size",
-                  attrs: {
-                    src: "/image/like-share-follow.jpg",
-                    alt: "like, share and follow symbol"
-                  }
-                })
-              ])
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "btn-floating pink darken-2 pulse col s12 m4 l4 center-align"
+                },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "white-text text-darken-3",
+                      attrs: { href: "#benefits", id: "link" }
+                    },
+                    [_vm._v("Benefits")]
+                  )
+                ]
+              )
             ]
           ),
           _vm._v(" "),
           _c("div", { staticClass: "divider" }),
           _vm._v(" "),
-          _c("div", { staticClass: "row", attrs: { id: "benefits" } }, [
-            _c(
-              "div",
-              { staticClass: "black-text", attrs: { id: "tweeter-text3" } },
-              [_c("p", { staticClass: "p3" }, [_vm._v("Benefits?")])]
-            ),
+          _c("div", { attrs: { id: "about" } }, [
+            _c("div", { staticClass: "layer hide-on-med-and-down" }, [
+              _c("div", { staticClass: "layer1 la1 hide-on-med-and-down" }, [
+                _c("div", { staticClass: "layer2 la2 hide-on-med-and-down" }, [
+                  _c("div", { staticClass: "layer3 la3 hide-on-med-and-down" })
+                ])
+              ])
+            ]),
             _vm._v(" "),
             _c(
               "div",
               {
-                staticClass: "grey-text text-darken-4",
-                attrs: { id: "about-text3" }
+                staticClass: "black-text center-align text1-valign",
+                attrs: { id: "tweeter-text1" }
               },
-              [
-                _c("ul", [
-                  _c("li", { attrs: { id: "fact8" } }, [
-                    _vm._v(
-                      "* reach a large number of people quickly through tweets and retweets"
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { attrs: { id: "fact9" } }, [
-                    _vm._v(
-                      "* build relationships with experts and other followers"
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { attrs: { id: "fact10" } }, [
-                    _vm._v(
-                      "* build relationships with experts and other followers"
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { attrs: { id: "fact11" } }, [
-                    _vm._v(
-                      "* seek feedback about your work and give feedback to others"
+              [_c("p", [_vm._v("What is Tweeter?")])]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "row col s12 m12 l12" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col s12 m6 l6 grey-text text-darken-4 b1",
+                  attrs: { id: "about-text1" }
+                },
+                [
+                  _c("ul", [
+                    _c(
+                      "li",
+                      { staticClass: "flow-text", attrs: { id: "fact1" } },
+                      [_vm._v("* a social networking website")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "flow-text", attrs: { id: "fact2" } },
+                      [_vm._v("* users can share posts called tweets")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "flow-text", attrs: { id: "fact3" } },
+                      [
+                        _vm._v(
+                          "* can post comments to others tweets and retweet them"
+                        )
+                      ]
                     )
                   ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "col s12 m5 l5 marketing" }, [
+                _c("img", {
+                  staticClass: "responsive-img marketing-size",
+                  attrs: {
+                    src: "/image/social.jpg",
+                    alt: "a group of people using social network like twitter"
+                  }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "divider" }),
+          _vm._v(" "),
+          _c("div", { attrs: { id: "features" } }, [
+            _c("div", { staticClass: "layer hide-on-med-and-down" }, [
+              _c("div", { staticClass: "layer1 la1 hide-on-med-and-down" }, [
+                _c("div", { staticClass: "layer2 la2 hide-on-med-and-down" }, [
+                  _c("div", { staticClass: "layer3 la3 hide-on-med-and-down" })
                 ])
-              ]
-            )
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "black-text center-align  text2-valign",
+                attrs: { id: "tweeter-text2" }
+              },
+              [_c("p", [_vm._v("What can you do here?")])]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "row col s12 m12 l12" }, [
+              _c(
+                "div",
+                {
+                  staticClass: " grey-text text-darken-4 b2 col s12 m6 l6",
+                  attrs: { id: "about-text2" }
+                },
+                [
+                  _c("ul", [
+                    _c(
+                      "li",
+                      { staticClass: "flow-text", attrs: { id: "fact4" } },
+                      [
+                        _vm._v(
+                          "* Tweeter is user-friendly and open to everyone"
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "flow-text", attrs: { id: "fact5" } },
+                      [
+                        _vm._v(
+                          "* Even the least technical-minded people can sign up and begin posting on Tweeter"
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "flow-text", attrs: { id: "fact6" } },
+                      [
+                        _vm._v(
+                          "* a way to keep in touch or reconnect with long-lost friends"
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "flow-text", attrs: { id: "fact7" } },
+                      [
+                        _vm._v(
+                          "* Tweeter makes it simple to share text messages, status posts and feelings on Tweeter"
+                        )
+                      ]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "likeShare col s12 m5 l5" }, [
+                _c("img", {
+                  staticClass: "responsive-img likeshare-size",
+                  attrs: {
+                    src: "/image/likesharefollow.png",
+                    alt: "like, share and follow symbol"
+                  }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "divider" }),
+          _vm._v(" "),
+          _c("div", { attrs: { id: "benefits" } }, [
+            _c("div", { staticClass: "layer hide-on-med-and-down" }, [
+              _c("div", { staticClass: "layer1 la1 hide-on-med-and-down" }, [
+                _c("div", { staticClass: "layer2 la2 hide-on-med-and-down" }, [
+                  _c("div", { staticClass: "layer3 la3 hide-on-med-and-down" })
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "black-text center-align text3-valign",
+                attrs: { id: "tweeter-text3" }
+              },
+              [_c("p", [_vm._v("Benefits?")])]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "row col s12 m12 l12" }, [
+              _c(
+                "div",
+                {
+                  staticClass: " grey-text text-darken-4 b3 col s12 m6 l6",
+                  attrs: { id: "about-text3" }
+                },
+                [
+                  _c("ul", [
+                    _c(
+                      "li",
+                      { staticClass: "flow-text", attrs: { id: "fact8" } },
+                      [
+                        _vm._v(
+                          "* reach a large number of people quickly through tweets and retweets"
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "flow-text", attrs: { id: "fact9" } },
+                      [
+                        _vm._v(
+                          "* build relationships with experts and other followers"
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "flow-text", attrs: { id: "fact10" } },
+                      [
+                        _vm._v(
+                          "* keep up-to-date with the latest news and developments, and share it with others instantly"
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "flow-text", attrs: { id: "fact11" } },
+                      [
+                        _vm._v(
+                          "* seek feedback about your work and give feedback to others"
+                        )
+                      ]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "connect col s12 m5 l5" }, [
+                _c("img", {
+                  staticClass: "responsive-img connecting-size",
+                  attrs: {
+                    src: "/image/connecting.jpg",
+                    alt: "people connecting and chatting"
+                  }
+                })
+              ])
+            ])
           ])
         ])
       ]
@@ -51024,12 +51160,7 @@ var app = new Vue({
   components: {
     Like: _components_Like_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     Gif: _components_Gif_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-  } // data: {
-  //     title: "Vue.js - The UNIX and Linux Forums",
-  //     desc: "My Vue.js - The UNIX and Linux Forums",
-  //     keywords: "My (Obsolete) Keywords"
-  //   }
-
+  }
 });
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.sidenav');

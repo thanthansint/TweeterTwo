@@ -17,17 +17,18 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> --}}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
+
 
         {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -59,10 +60,13 @@
 
             .top-right {
                 position: absolute;
-                right: 60px;
+                right: 80px;
                 top: 18px;
             }
-
+            .top {
+                position: absolute;
+                top: 18px;
+            }
             .content {
                 text-align: center;
             }
@@ -91,9 +95,9 @@
     </head>
     <body>
         {{-- <div class="flex-center position-ref full-height col s12"> --}}
-        <div class="flex-center position-ref col s12">
+        <div class="flex-center position-ref col s12 m12 l12">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -124,36 +128,36 @@
         // this is where our code will go
 
         var bg_tween = TweenMax.to('#about-text1', 1, {
-             backgroundColor: '#f5c0d5',
+            //  backgroundColor: '#f5c0d5',
              ease: Linear.easeNone
         });
 
         var bg_tween2 = TweenMax.to('#about-text2', 1, {
-             backgroundColor: '#caddf3',
+            //  backgroundColor: '#caddf3',
              ease: Linear.easeNone
         });
 
         var bg_tween3 = TweenMax.to('#about-text3', 1, {
-             backgroundColor: '#d8f5a8',
+            //  backgroundColor: '#d8f5a8',
              ease: Linear.easeNone
         });
 
         var yoyo_tween = TweenMax.to('#tweeter-text1', 1, {
-            transform: 'scale(1.5)',
+            transform: 'scale(2.5)',
             ease: Cubic.easeOut,
             repeat: -1, // this negative value repeats the animation
             yoyo: true // make it bounce…yo!
             });
 
         var yoyo_tween2 = TweenMax.to('#tweeter-text2', 1, {
-            transform: 'scale(1.5)',
+            transform: 'scale(2.5)',
             ease: Cubic.easeOut,
             repeat: -1, // this negative value repeats the animation
             yoyo: true // make it bounce…yo!
             });
 
         var yoyo_tween3 = TweenMax.to('#tweeter-text3', 1, {
-            transform: 'scale(1.5)',
+            transform: 'scale(2.5)',
             ease: Cubic.easeOut,
             repeat: -1, // this negative value repeats the animation
             yoyo: true // make it bounce…yo!
@@ -194,77 +198,77 @@
         var scene = new ScrollMagic.Scene({
             offset: 100,
             triggerElement: '#fact1', // starting scene, when reaching this element
-            duration: 40, // pin element for the window height - 1
+            duration: 50, // pin element for the window height - 1
         })
         .setPin('#fact1'); // the element we want to pin
 
         var scene2 = new ScrollMagic.Scene({
             offset: 100,
             triggerElement: '#fact2', // starting scene, when reaching this element
-            duration: 40, // pin element for the window height - 1
+            duration: 50, // pin element for the window height - 1
         })
         .setPin('#fact2'); // the element we want to pin
 
         var scene3 = new ScrollMagic.Scene({
             offset: 100,
             triggerElement: '#fact3', // starting scene, when reaching this element
-            duration: 40, // pin element for the window height - 1
+            duration: 50, // pin element for the window height - 1
         })
         .setPin('#fact3'); // the element we want to pin
 
         var scene4 = new ScrollMagic.Scene({
             offset: 100,
             triggerElement: '#fact4', // starting scene, when reaching this element
-            duration: 40, // pin element for the window height - 1
+            duration: 50, // pin element for the window height - 1
         })
         .setPin('#fact4'); // the element we want to pin
 
         var scene5 = new ScrollMagic.Scene({
             offset: 100,
             triggerElement: '#fact5', // starting scene, when reaching this element
-            duration: 40, // pin element for the window height - 1
+            duration: 50, // pin element for the window height - 1
         })
         .setPin('#fact5'); // the element we want to pin
 
         var scene6 = new ScrollMagic.Scene({
             offset: 100,
             triggerElement: '#fact6', // starting scene, when reaching this element
-            duration: 40, // pin element for the window height - 1
+            duration: 50, // pin element for the window height - 1
         })
         .setPin('#fact6'); // the element we want to pin
 
         var scene7 = new ScrollMagic.Scene({
             offset: 100,
             triggerElement: '#fact7', // starting scene, when reaching this element
-            duration: 40, // pin element for the window height - 1
+            duration: 50, // pin element for the window height - 1
         })
         .setPin('#fact7'); // the element we want to pin
 
         var scene8 = new ScrollMagic.Scene({
             offset: 100,
             triggerElement: '#fact8', // starting scene, when reaching this element
-            duration: 40, // pin element for the window height - 1
+            duration: 50, // pin element for the window height - 1
         })
         .setPin('#fact8'); // the element we want to pin
 
         var scene9 = new ScrollMagic.Scene({
             offset: 100,
             triggerElement: '#fact9', // starting scene, when reaching this element
-            duration: 40, // pin element for the window height - 1
+            duration: 50, // pin element for the window height - 1
         })
         .setPin('#fact9'); // the element we want to pin
 
         var scene10 = new ScrollMagic.Scene({
             offset: 100,
             triggerElement: '#fact10', // starting scene, when reaching this element
-            duration: 40, // pin element for the window height - 1
+            duration: 50, // pin element for the window height - 1
         })
         .setPin('#fact10'); // the element we want to pin
 
         var scene11 = new ScrollMagic.Scene({
             offset: 100,
             triggerElement: '#fact11', // starting scene, when reaching this element
-            duration: 40, // pin element for the window height - 1
+            duration: 50, // pin element for the window height - 1
         })
         .setPin('#fact11'); // the element we want to pin
 

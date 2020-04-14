@@ -1,5 +1,5 @@
 <template>
-    <div class="footer white-text center-align container"><p>Copyright: 2010</p></div>
+    <div class="footer white-text"><p class="vertical">Copyright: 2010</p></div>
 </template>
 
 <script>
@@ -11,13 +11,15 @@ export default {
 <style scoped>
     .footer {
         position: relative;
-        top: 2vh;
+        top: 0;
         height : 15vh;
         font-size: 20px;
-         text-align: center;
         background-color: #c2185b;
+        /* margin-top: 2vh; */
     }
-div.footer {
-    text-align: center;
-}
+    .vertical{
+        position: absolute;
+        top: 5vh;
+        left: 25vw;
+    }
 </style>
