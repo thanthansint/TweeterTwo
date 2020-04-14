@@ -18,5 +18,7 @@ class Tweet extends Model
     public function likes(){
         return $this->hasMany('App\Like');
     }
-
+    public function gifs(){
+        return $this->hasMany('App\Gif');
+    }
 }

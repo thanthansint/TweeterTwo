@@ -1944,6 +1944,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     userid: {
@@ -1956,6 +1958,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     username: {
       type: String,
+      required: true
+    },
+    gifArray: {
+      type: Array,
       required: true
     }
   },
@@ -1998,7 +2004,7 @@ __webpack_require__.r(__webpack_exports__);
         userid: this.userid,
         gifcontent: this.gifcontent
       }).then(function (response) {
-        console.log(response.message);
+        //console.log(response.message);
         _this2.gotGif = false;
         _this2.searchGif = true;
         _this2.isSaved = true;

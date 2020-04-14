@@ -77,6 +77,7 @@
                     $comments = \App\Tweet::find($tweet->id)->comments;
                     $like = sizeOf(\App\Like::where('tweet_id', $tweet->id)->where('user_id',Auth::user()->id)->get());
                     // $username = \App\User::where('user_id',Auth::user()->id)->get();
+                    $gifs = \App\Gif::find($tweet->id)->gifs;
                 @endphp
 
                 <div class="card-panel lime lighten-5" id="margin" >
@@ -234,7 +235,7 @@
                         @php
                             $gifUser = \App\User::find(Auth::user()->id);
                         @endphp
-                        <Gif username="{{ $gifUser->name }}" v-bind:userid={{ Auth::user()->id }} v-bind:tweetid={{ $tweet->id }} />
+                        <Gif username="{{ $gifUser->name }}" :gifArray = {{ $gifs }} v-bind:userid={{ Auth::user()->id }} v-bind:tweetid={{ $tweet->id }} />
                     </div>
                 </div>
             @endforeach
