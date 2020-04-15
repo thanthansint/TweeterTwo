@@ -8,8 +8,7 @@
             <button v-if="gotGif" @click="saveClick" class="btn-small pink darken-1 toggled: isToggled" id="border-style" type="submit">Save</button>
         </div>
         <div>
-            <!-- @if (sizeOf(gifs)==0) <p>No Gifs</p>
-                @else <p v-for="gif i gifArray" :key="gif.id"></p> -->
+            
             <p v-if="isSaved" class="gif-setting">{{ name }}</p>
             <img v-if="gifcontent" :src="gifcontent" v-show="isDeleted == false" alt="gif image" class="gif-image"><br>
             <button v-if="gifcontent && isDeleted == false && isSaved" @click="deleteGif" class="btn-small pink darken-1" id="border-style" type="submit">Delete</button>
@@ -31,10 +30,6 @@ export default {
         username: {
             type: String,
             required: true
-        },
-        gifArray: {
-            type: Array,
-            required: true
         }
     },
     data: function() {
@@ -44,7 +39,6 @@ export default {
             name: this.username,
             userId: this.userid,
             tweetId: this.tweetid,
-
             gotGif: false,
             searchGif: true,
             isDeleted: false,
@@ -62,7 +56,7 @@ export default {
             axios.get(api+'?q='+this.gifinput+'&rating='+rating+'&apikey='+apikey)
                 .then(
                     response => {
-                        //this.gifImage = response.data.data.images.original.url;
+                       
                         this.gifcontent = response.data.data.images.original.url;
                         this.gifinput = '';
                         this.gotGif = true;

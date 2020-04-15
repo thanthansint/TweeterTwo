@@ -75,16 +75,14 @@
                 @php
                     $count = sizeOf(\App\Tweet::find($tweet->id)->likes);
                     $comments = \App\Tweet::find($tweet->id)->comments;
-                    $like = sizeOf(\App\Like::where('tweet_id', $tweet->id)->where('user_id',Auth::user()->id)->get());
-                    // $username = \App\User::where('user_id',Auth::user()->id)->get();
-                    $gifs = \App\Gif::find($tweet->id)->gifs;
+                    $like = sizeOf(\App\Like::where('tweet_id', $tweet->id)->where('user_id',Auth::user()->id)->get());                    
                 @endphp
 
                 <div class="card-panel lime lighten-5" id="margin" >
                     <br>
                     <div class="col s12 padding-left-right">
 
-                        {{-- show the tweets here --}}
+                        
                         <div class="col s12">
                             @php
                                 $tweetUser = \App\User::find($tweet->user_id);
@@ -115,7 +113,7 @@
                                     <form action="/editTweetForm" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$tweet->id}}">
-                                        {{-- /////// --}}
+                                        
                                         <input type="hidden" name="url" value="{{url()->full()}}">
                                         <button class="btn-small pink darken-1" id="border-style" type="submit" value="{{$tweet->id}}">Edit</button><br><br>
                                     </form>
@@ -124,7 +122,7 @@
                                     <form action="/deleteTweetForm" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$tweet->id}}">
-                                        {{-- //////// --}}
+                                        
                                         <input type="hidden" name="url" value="{{url()->full()}}">
                                         <button class="btn-small pink darken-1" id="border-style" type="submit" value="{{$tweet->id}}">Delete</button>
                                     </form>
@@ -135,40 +133,16 @@
                     <div class="divider"></div>
                     <div class="row s12 m12 12 ">
                         <div class="col s6 m6 l6 center">
-                            {{-- <form action="/saveLike" method="post">
-                                @csrf
-                                    <br>
-                                    <input type="hidden" name="tweetId" value="{{$tweet->id}}">
-                                    <input type="hidden" name="userId" value="{{Auth::user()->id}}">
-                                    @if ($like==0)
-                                        <button class="btn-tiny blue-text text-darken-5 light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
-                                    @elseif ($like==1)
-                                        <button class="btn-tiny red-text text-darken-5 light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
-                                    @endif
-                                    <label id="font-style">{{$count}}</label>
-                            </form> --}}
+                            
                         <Like v-bind:likes={{ $like }} v-bind:like-count={{ $count }} v-bind:userid={{ Auth::user()->id }} v-bind:tweetid={{ $tweet->id }} />
                         </div>
-                        {{-- ///////////// --}}
-                        {{-- <div class="col s6 m6 l6 center">
-                            <form action="/saveUnlike" method="post">
-                                @csrf
-                                    <br>
-                                    <input type="hidden" name="tweetId" value="{{$tweet->id}}">
-                                    <input type="hidden" name="userId" value="{{Auth::user()->id}}">
-                                    @if ($like==0)
-                                        <button class="btn-tiny light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite_border</i></strong></button>
-                                    @else
-                                        <button class="btn-tiny light-green lighten-5" id="border-style" type="submit" value="{{$tweet->id}}"><strong><i class="material-icons">favorite</i></strong></button>
-                                    @endif
-                            </form>
-
-                        </div> --}}
+                       
+                        
                     </div>
 
                     <div class="row s12 m12 l12 padding-left-right">
                         <form action="/saveComment" method="POST">
-                            {{-- {{method_field('POST')}} --}}
+                            
                             <div class="col s1 m2 l2 push-s10 push-m10 push-l10">
                                 <br>
                                 <button class="btn-floating btn-medium waves-effect waves-light pink" id="border-style" type="submit" name="submit" value="{{$tweet->id}}"><i class="material-icons">add</i></button>
@@ -230,23 +204,23 @@
                         @endif
                     </div>
 
-                    {{-- GIF search --}}
+                    <!-- {{-- GIF search --}} -->
                     <div class="col s12">
                         @php
                             $gifUser = \App\User::find(Auth::user()->id);
                         @endphp
-                        <Gif username="{{ $gifUser->name }}" :gifArray = {{ $gifs }} v-bind:userid={{ Auth::user()->id }} v-bind:tweetid={{ $tweet->id }} />
+                        <Gif username="{{ $gifUser->name }}" v-bind:userid={{ Auth::user()->id }} v-bind:tweetid={{ $tweet->id }} />
                     </div>
                 </div>
             @endforeach
 
-            {{-- pagination links --}}
+            
             <div>
                 <nav>
                 {{ $tweets->links() }}
                 </nav>
             </div>
-            {{-- //// --}}
+            
         @endguest
     </div>
 @endsection

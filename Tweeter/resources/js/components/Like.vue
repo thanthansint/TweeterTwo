@@ -36,8 +36,7 @@ export default {
     }
     },
     methods: {
-        likeClick: function(){
-            //  console.log(this.tweetid);
+        likeClick: function(){            
              if (this.likes==0 && this.Islike == 0) {
                     axios.post("/likeCount", {
                     tweetid: this.tweetid

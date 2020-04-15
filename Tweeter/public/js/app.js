@@ -1945,7 +1945,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     userid: {
@@ -1958,10 +1957,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     username: {
       type: String,
-      required: true
-    },
-    gifArray: {
-      type: Array,
       required: true
     }
   },
@@ -1987,7 +1982,6 @@ __webpack_require__.r(__webpack_exports__);
       var query = '&tag=' + this.gifinput;
       var rating = 'pg';
       axios.get(api + '?q=' + this.gifinput + '&rating=' + rating + '&apikey=' + apikey).then(function (response) {
-        //this.gifImage = response.data.data.images.original.url;
         _this.gifcontent = response.data.data.images.original.url;
         _this.gifinput = '';
         _this.gotGif = true;
@@ -2188,7 +2182,6 @@ __webpack_require__.r(__webpack_exports__);
     likeClick: function likeClick() {
       var _this = this;
 
-      //  console.log(this.tweetid);
       if (this.likes == 0 && this.Islike == 0) {
         axios.post("/likeCount", {
           tweetid: this.tweetid
@@ -6806,7 +6799,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.footer[data-v-61a7c374] {\n    position: relative;\n    top: 0;\n    height : 15vh;\n    font-size: 20px;\n    background-color: #c2185b;\n    /* margin-top: 2vh; */\n}\n.vertical[data-v-61a7c374]{\n    position: absolute;\n    top: 5vh;\n    left: 25vw;\n}\n", ""]);
+exports.push([module.i, "\n.footer[data-v-61a7c374] {\n    position: relative;\n    top: 0;\n    height : 15vh;\n    font-size: 20px;\n    background-color: #c2185b;\n}\n.vertical[data-v-61a7c374]{\n    position: absolute;\n    top: 5vh;\n    left: 25vw;\n}\n", ""]);
 
 // exports
 

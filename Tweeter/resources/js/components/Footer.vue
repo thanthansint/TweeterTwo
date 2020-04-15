@@ -14,8 +14,7 @@ export default {
         top: 0;
         height : 15vh;
         font-size: 20px;
-        background-color: #c2185b;
-        /* margin-top: 2vh; */
+        background-color: #c2185b;        
     }
     .vertical{
         position: absolute;

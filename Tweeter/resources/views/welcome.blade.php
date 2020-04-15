@@ -17,7 +17,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> --}}
+       
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -30,10 +30,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
 
 
-        {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> --}}
-        <!-- Styles -->
+        
+       
         <style>
             html, body {
                 background-color: #fff;
@@ -71,11 +69,6 @@
                 text-align: center;
             }
 
-            /* .title {
-                font-size: 84px;
-                color: #ad1457;
-                font-weight: bold;
-            } */
 
             .links > a {
                 color: #636b6f;
@@ -94,7 +87,7 @@
         </style>
     </head>
     <body>
-        {{-- <div class="flex-center position-ref full-height col s12"> --}}
+       
         <div class="flex-center position-ref col s12 m12 l12">
             @if (Route::has('login'))
                 <div class="top links">
@@ -110,14 +103,14 @@
                 </div>
             @endif
 
-            {{-- <div class="content col s12">
+            <!-- <div class="content col s12">
                 <div class="welcome-title">
                    Welcome To TWEETER
                 </div>
                 <div>
                     <img id="welcome-image" class="responsive-img" src="../image/birds-singing.jpg" alt="birds singing">
                 </div>
-            </div> --}}
+            </div>  -->
         </div>
         <div id="app">
             <Root/>
@@ -125,7 +118,7 @@
         <script src="{{ asset('js/app.js')}}"></script>
 
         <script>
-        // this is where our code will go
+       
 
         var bg_tween = TweenMax.to('#about-text1', 1, {
             //  backgroundColor: '#f5c0d5',
